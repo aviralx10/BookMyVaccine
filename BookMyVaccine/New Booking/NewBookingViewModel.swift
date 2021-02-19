@@ -34,9 +34,3 @@ final class NewBookingViewModel: ObservableObject {
         }
     }
 }
-
-extension MKMapItem: Identifiable {
-    public var id: String {
-        "\(placemark.coordinate.latitude)\(placemark.coordinate.longitude)"
-    }
-}
