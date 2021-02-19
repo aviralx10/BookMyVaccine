@@ -17,6 +17,7 @@ struct MapView: View {
 
     var body: some View {
         Map(coordinateRegion: $region)
+            .ignoresSafeArea()
             .onChange(of: locationManager.lastLocation) {
                 region.center = $0.coordinate
             }
