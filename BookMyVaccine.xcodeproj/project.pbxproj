@@ -7,20 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A16726325E0611B0031C4FA /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A16726225E0611B0031C4FA /* LocationManager.swift */; };
 		820ACAC625E057F500355377 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820ACAC525E057F500355377 /* MapView.swift */; };
 		820ACAC925E05A5100355377 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820ACAC825E05A5100355377 /* SearchBar.swift */; };
 		D2DBAADF25E047490005042D /* BookMyVaccineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DBAADE25E047490005042D /* BookMyVaccineApp.swift */; };
-		D2DBAAE125E047490005042D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DBAAE025E047490005042D /* ContentView.swift */; };
+		D2DBAAE125E047490005042D /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DBAAE025E047490005042D /* RootView.swift */; };
 		D2DBAAE325E0474A0005042D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2DBAAE225E0474A0005042D /* Assets.xcassets */; };
 		D2DBAAE625E0474A0005042D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2DBAAE525E0474A0005042D /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A16726225E0611B0031C4FA /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		820ACAC525E057F500355377 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		820ACAC825E05A5100355377 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		D2DBAADB25E047490005042D /* BookMyVaccine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookMyVaccine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2DBAADE25E047490005042D /* BookMyVaccineApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookMyVaccineApp.swift; sourceTree = "<group>"; };
-		D2DBAAE025E047490005042D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D2DBAAE025E047490005042D /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		D2DBAAE225E0474A0005042D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D2DBAAE525E0474A0005042D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D2DBAAE725E0474A0005042D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -37,6 +39,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A16726625E063C70031C4FA /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				D2DBAADE25E047490005042D /* BookMyVaccineApp.swift */,
+				D2DBAAE225E0474A0005042D /* Assets.xcassets */,
+				D2DBAAE725E0474A0005042D /* Info.plist */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		0A16726825E063EC0031C4FA /* New Booking */ = {
+			isa = PBXGroup;
+			children = (
+				820ACAC525E057F500355377 /* MapView.swift */,
+				0A16726225E0611B0031C4FA /* LocationManager.swift */,
+				820ACAC825E05A5100355377 /* SearchBar.swift */,
+			);
+			path = "New Booking";
+			sourceTree = "<group>";
+		};
+		0A16726925E063F50031C4FA /* My Bookings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "My Bookings";
+			sourceTree = "<group>";
+		};
 		D2DBAAD225E047490005042D = {
 			isa = PBXGroup;
 			children = (
@@ -56,13 +85,11 @@
 		D2DBAADD25E047490005042D /* BookMyVaccine */ = {
 			isa = PBXGroup;
 			children = (
-				D2DBAADE25E047490005042D /* BookMyVaccineApp.swift */,
-				D2DBAAE025E047490005042D /* ContentView.swift */,
-				D2DBAAE225E0474A0005042D /* Assets.xcassets */,
-				D2DBAAE725E0474A0005042D /* Info.plist */,
+				0A16726825E063EC0031C4FA /* New Booking */,
+				0A16726925E063F50031C4FA /* My Bookings */,
+				0A16726625E063C70031C4FA /* Support */,
+				D2DBAAE025E047490005042D /* RootView.swift */,
 				D2DBAAE425E0474A0005042D /* Preview Content */,
-				820ACAC525E057F500355377 /* MapView.swift */,
-				820ACAC825E05A5100355377 /* SearchBar.swift */,
 			);
 			path = BookMyVaccine;
 			sourceTree = "<group>";
@@ -144,8 +171,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2DBAAE125E047490005042D /* ContentView.swift in Sources */,
+				D2DBAAE125E047490005042D /* RootView.swift in Sources */,
 				820ACAC925E05A5100355377 /* SearchBar.swift in Sources */,
+				0A16726325E0611B0031C4FA /* LocationManager.swift in Sources */,
 				820ACAC625E057F500355377 /* MapView.swift in Sources */,
 				D2DBAADF25E047490005042D /* BookMyVaccineApp.swift in Sources */,
 			);
@@ -278,7 +306,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"BookMyVaccine/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = BookMyVaccine/Info.plist;
+				INFOPLIST_FILE = BookMyVaccine/Support/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -299,7 +327,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"BookMyVaccine/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = BookMyVaccine/Info.plist;
+				INFOPLIST_FILE = BookMyVaccine/Support/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
