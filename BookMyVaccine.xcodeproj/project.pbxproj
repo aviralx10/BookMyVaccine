@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		820ACAC625E057F500355377 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820ACAC525E057F500355377 /* MapView.swift */; };
+		820ACAC925E05A5100355377 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820ACAC825E05A5100355377 /* SearchBar.swift */; };
 		D2DBAADF25E047490005042D /* BookMyVaccineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DBAADE25E047490005042D /* BookMyVaccineApp.swift */; };
 		D2DBAAE125E047490005042D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DBAAE025E047490005042D /* ContentView.swift */; };
 		D2DBAAE325E0474A0005042D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2DBAAE225E0474A0005042D /* Assets.xcassets */; };
@@ -14,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		820ACAC525E057F500355377 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		820ACAC825E05A5100355377 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		D2DBAADB25E047490005042D /* BookMyVaccine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookMyVaccine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2DBAADE25E047490005042D /* BookMyVaccineApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookMyVaccineApp.swift; sourceTree = "<group>"; };
 		D2DBAAE025E047490005042D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -57,6 +61,8 @@
 				D2DBAAE225E0474A0005042D /* Assets.xcassets */,
 				D2DBAAE725E0474A0005042D /* Info.plist */,
 				D2DBAAE425E0474A0005042D /* Preview Content */,
+				820ACAC525E057F500355377 /* MapView.swift */,
+				820ACAC825E05A5100355377 /* SearchBar.swift */,
 			);
 			path = BookMyVaccine;
 			sourceTree = "<group>";
@@ -139,6 +145,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2DBAAE125E047490005042D /* ContentView.swift in Sources */,
+				820ACAC925E05A5100355377 /* SearchBar.swift in Sources */,
+				820ACAC625E057F500355377 /* MapView.swift in Sources */,
 				D2DBAADF25E047490005042D /* BookMyVaccineApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
