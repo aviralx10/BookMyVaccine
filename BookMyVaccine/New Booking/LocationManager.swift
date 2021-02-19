@@ -1,10 +1,9 @@
 import CoreLocation
 import Foundation
 
-final class LocationManager: NSObject, ObservableObject {
-
-    @Published var isAuthorized = false
-    @Published var lastLocation = CLLocation(latitude: 0, longitude: 0)
+final class LocationManager: NSObject {
+    var isAuthorized = false
+    var lastLocation = CLLocation(latitude: 0, longitude: 0)
 
     private let manager: CLLocationManager
 

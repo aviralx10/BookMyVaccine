@@ -10,7 +10,7 @@ import SwiftUI
 struct RootView: View {
     var body: some View {
         TabView {
-            MapView()
+            NewBooking()
                 .tabItem {
                     VStack {
                         Image(systemName:"pencil")

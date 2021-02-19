@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0A16726325E0611B0031C4FA /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A16726225E0611B0031C4FA /* LocationManager.swift */; };
+		0A72BCB625E0745E0009F32F /* NewBooking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A72BCB525E0745E0009F32F /* NewBooking.swift */; };
+		0A72BCB925E07ECB0009F32F /* NewBookingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A72BCB825E07ECB0009F32F /* NewBookingViewModel.swift */; };
 		820ACAC625E057F500355377 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820ACAC525E057F500355377 /* MapView.swift */; };
 		820ACAC925E05A5100355377 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820ACAC825E05A5100355377 /* SearchBar.swift */; };
 		D2DBAADF25E047490005042D /* BookMyVaccineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DBAADE25E047490005042D /* BookMyVaccineApp.swift */; };
@@ -18,6 +20,8 @@
 
 /* Begin PBXFileReference section */
 		0A16726225E0611B0031C4FA /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		0A72BCB525E0745E0009F32F /* NewBooking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBooking.swift; sourceTree = "<group>"; };
+		0A72BCB825E07ECB0009F32F /* NewBookingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBookingViewModel.swift; sourceTree = "<group>"; };
 		820ACAC525E057F500355377 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		820ACAC825E05A5100355377 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		D2DBAADB25E047490005042D /* BookMyVaccine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookMyVaccine.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,8 +57,10 @@
 			isa = PBXGroup;
 			children = (
 				820ACAC525E057F500355377 /* MapView.swift */,
+				0A72BCB525E0745E0009F32F /* NewBooking.swift */,
 				0A16726225E0611B0031C4FA /* LocationManager.swift */,
 				820ACAC825E05A5100355377 /* SearchBar.swift */,
+				0A72BCB825E07ECB0009F32F /* NewBookingViewModel.swift */,
 			);
 			path = "New Booking";
 			sourceTree = "<group>";
@@ -175,7 +181,9 @@
 				820ACAC925E05A5100355377 /* SearchBar.swift in Sources */,
 				0A16726325E0611B0031C4FA /* LocationManager.swift in Sources */,
 				820ACAC625E057F500355377 /* MapView.swift in Sources */,
+				0A72BCB625E0745E0009F32F /* NewBooking.swift in Sources */,
 				D2DBAADF25E047490005042D /* BookMyVaccineApp.swift in Sources */,
+				0A72BCB925E07ECB0009F32F /* NewBookingViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
