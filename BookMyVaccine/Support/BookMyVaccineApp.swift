@@ -11,7 +11,7 @@ import SwiftUI
 struct BookMyVaccineApp: App {
     var body: some Scene {
         WindowGroup {
-            RootView()
+            HomeView()
         }
     }
 }
