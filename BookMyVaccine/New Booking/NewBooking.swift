@@ -6,7 +6,11 @@ struct NewBooking: View {
 
     var body: some View {
         VStack {
-            MapView(region: $viewModel.region)
+            MapView(region: $viewModel.region, places: viewModel.places) { place in
+                if let location = place.name {
+                    HospitalPin(hospitalName: location, isAvailable: true)
+                }
+            }
             SearchBar(text: $viewModel.searchText)
             List(viewModel.places) { place in
                 if let name = place.name {
