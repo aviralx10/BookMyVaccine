@@ -18,7 +18,7 @@ struct RootView: View {
                     }
 
                 }.tag(1)
-            Text("Item2")
+            MyBookings()
                 .tabItem {
                     VStack {
                         Image(systemName:"heart.text.square.fill")
