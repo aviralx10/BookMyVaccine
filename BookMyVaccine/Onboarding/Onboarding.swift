@@ -8,9 +8,15 @@
 import SwiftUI
 
 struct Onboarding: View {
-    let titles = ["Map", "Choose", "Confirm", "Show QR Code"]
-    let bodies = ["Select the nearest hospitals \n near you", "Choose your slot,date \n and your vaccine type","Confirm once you are finished \n Cheer up you're gonna get vaccinated", "Once Confirmed, we'll generate a QR code for you \n for contactless entry to your venue \n Yayy!!"]
-    @State var slide = 0
+    let titles = ["", "Map", "Choose", "Confirm", "Show QR Code"]
+    let bodies = [
+        "",
+        "Select the nearest hospitals near you",
+        "Choose your slot, date and your vaccine type",
+        "Confirm once you are finished. Cheer up you're gonna get vaccinated",
+        "Once confirmed, we'll generate a QR code for you for contactless entry to your venue. Yayy!!"
+    ]
+    @State private var slide = 0
     @ObservedObject var currentGiver: currentUser
     @Binding var login: Bool
 
@@ -25,27 +31,17 @@ struct Onboarding: View {
                     }
                 }.padding([.trailing, .top], 30)
                 Spacer()
-                if slide == 0 {
-                    Rectangle().fill(Color.clear).frame(height: 60)
-                    Text("HELLLOOOOO!!!!!")
-                        .fontWeight(.bold)
-                        .font(.body)
-                        .padding(.bottom, 5)
-                        .padding(.top,22)
-                        .offset(y:90)
-                    
-                }
-                else {
-                Text(titles[slide-1])
+                Text(titles[slide])
                     .fontWeight(.heavy)
                     .font(.title)
+                    .frame(minHeight: 50)
                     .padding(.bottom, 20)
-                Text(bodies[slide-1])
+                Text(bodies[slide])
                     .fontWeight(.regular)
                     .font(.footnote)
                     .multilineTextAlignment(.center)
+                    .frame(maxWidth: 200, maxHeight: 60)
                     .padding(.bottom, 20)
-                }
                 ImageSlider(slide: $slide).offset(y:-20)
                 NavigationLink(destination: Register(currentGiver: currentGiver, login: $login)) {
                     HStack {

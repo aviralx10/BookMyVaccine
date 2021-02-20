@@ -22,10 +22,10 @@ struct Login: View{
                 .padding(.bottom, 20)
 
             VStack(spacing: 25) {
-                TextField("    Username", text: $username)
+                TextField("Username", text: $username)
                     .frame(width: 260,height:30)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
-                SecureField("    Password", text: $password)
+                SecureField("Password", text: $password)
                     .frame(width: 260,height:30)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
 
