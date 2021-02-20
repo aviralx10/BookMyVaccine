@@ -11,7 +11,7 @@ struct VaccinationGraphView: View {
                     Text(data?.items.first?.location ?? "Country")
                         .font(.system(.body, design: .rounded))
                     
-                    Text("till \(data?.items.first?.dateInstance ?? Date(), style: .date)")
+                    Text("till \(data?.items.last?.dateInstance ?? Date(), style: .date)")
                         .font(.system(.caption, design: .rounded))
                         .foregroundColor(.secondary)
                 }
