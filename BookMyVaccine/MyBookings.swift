@@ -9,8 +9,8 @@ import SwiftUI
 import CoreImage.CIFilterBuiltins
 
 struct MyBookings: View {
-    @Binding var isBooked : Bool
-    @State var myString : String
+    //@Binding var isBooked : Bool
+    //@State var myString : String
     
     let context=CIContext()
     let filter=CIFilter.qrCodeGenerator()
