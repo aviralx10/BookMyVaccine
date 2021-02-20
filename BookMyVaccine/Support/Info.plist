@@ -46,5 +46,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>Your location is required for BookMyVaccine to show you the nearest hospitals.</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>Your location is required for BookMyVaccine to show you the nearest hospitals.</string>
 </dict>
 </plist>
