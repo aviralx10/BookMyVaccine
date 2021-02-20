@@ -54,8 +54,9 @@ struct VaccineGraphEntry: TimelineEntry {
 
 struct VaccineGraphEntryView: View {
     var entry: VaccineGraphProvider.Entry
+    @Environment(\.widgetFamily) var family
     var body: some View {
-        VaccinationGraphView(data: entry.data)
+        VaccinationGraphView(data: entry.data, showsLastDayInfo: family == .systemLarge)
     }
 }
 
@@ -76,7 +77,7 @@ struct VaccineGraphWidget_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             VaccineGraphEntryView(entry: VaccineGraphEntry(date: Date(), data: .sample))
-                .previewContext(WidgetPreviewContext(family: .systemMedium))
+                .previewContext(WidgetPreviewContext(family: .systemLarge))
             
             VaccineGraphEntryView(entry: VaccineGraphEntry(date: Date(), data: nil))
                 .preferredColorScheme(.dark)

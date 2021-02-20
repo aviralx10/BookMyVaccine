@@ -32,27 +32,10 @@ struct VaccineInfoView: View {
     }
     
     var countsView: some View {
-        ZStack(alignment: .trailing) {
-            ContainerRelativeShape()
-                .fill(Color.secondary.opacity(0.4))
-                .cornerRadius(12)
-            
-            VStack(alignment: .trailing) {
-                Text("\(data?.peopleVaccinated ?? "0")")
-                    .font(.system(size: 24, weight: .semibold, design: .rounded))
-                    .multilineTextAlignment(.trailing)
-                
-                HStack(spacing: 4) {
-                    Text("of")
-                        .font(.caption2)
-                    Text("\(data?.totalVaccination ?? "0")")
-                        .font(.caption2)
-                        .foregroundColor(.secondary)
-                }
-                .foregroundColor(.secondary)
-            }
-            .padding(.horizontal, 6)
-        }
+        VaccineCountsView(
+            count: "\(data?.peopleVaccinated ?? "0")",
+            total: "\(data?.totalVaccination ?? "0")"
+        )
     }
 }
 

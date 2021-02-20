@@ -43,6 +43,8 @@
 		D2FAD12225E1400000740A51 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FAD12025E1400000740A51 /* Date+Extension.swift */; };
 		D2FAD12A25E1442B00740A51 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FAD12925E1442B00740A51 /* String+Extensions.swift */; };
 		D2FAD12B25E1442B00740A51 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FAD12925E1442B00740A51 /* String+Extensions.swift */; };
+		D2FAD13825E14C2000740A51 /* VaccineCountsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FAD13725E14C2000740A51 /* VaccineCountsView.swift */; };
+		D2FAD13925E14C2000740A51 /* VaccineCountsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FAD13725E14C2000740A51 /* VaccineCountsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +101,7 @@
 		D2FAD11B25E1372300740A51 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		D2FAD12025E1400000740A51 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		D2FAD12925E1442B00740A51 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		D2FAD13725E14C2000740A51 /* VaccineCountsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccineCountsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,6 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				D2FAD0E125E101A200740A51 /* VaccineInfoView.swift */,
+				D2FAD13725E14C2000740A51 /* VaccineCountsView.swift */,
 				D2FAD0FE25E1209B00740A51 /* VaccinationGraphView.swift */,
 				D2FAD10C25E12F6000740A51 /* GridShape.swift */,
 				D2FAD10525E12EE100740A51 /* VaccineGraphShape.swift */,
@@ -362,6 +366,7 @@
 			files = (
 				D2FAD0D825E0FDA500740A51 /* VaccineData.swift in Sources */,
 				D2DBAAE125E047490005042D /* RootView.swift in Sources */,
+				D2FAD13825E14C2000740A51 /* VaccineCountsView.swift in Sources */,
 				820ACAC925E05A5100355377 /* SearchBar.swift in Sources */,
 				0A16726325E0611B0031C4FA /* LocationManager.swift in Sources */,
 				D2FAD12A25E1442B00740A51 /* String+Extensions.swift in Sources */,
@@ -390,6 +395,7 @@
 				D2FAD10E25E12F6000740A51 /* GridShape.swift in Sources */,
 				D2FAD11D25E1372300740A51 /* NetworkManager.swift in Sources */,
 				D2FAD12B25E1442B00740A51 /* String+Extensions.swift in Sources */,
+				D2FAD13925E14C2000740A51 /* VaccineCountsView.swift in Sources */,
 				D2FAD0E725E101D400740A51 /* VaccineInfoView.swift in Sources */,
 				D2FAD0F925E11FD000740A51 /* BookMyVaccineWidgetBundle.swift in Sources */,
 				D2FAD0FF25E1209B00740A51 /* VaccinationGraphView.swift in Sources */,

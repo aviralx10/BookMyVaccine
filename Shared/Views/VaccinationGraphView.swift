@@ -2,6 +2,7 @@ import SwiftUI
 
 struct VaccinationGraphView: View {
     var data: VaccineGraphData?
+    var showsLastDayInfo = false
     
     var body: some View {
         VStack(alignment: .trailing) {
@@ -14,6 +15,13 @@ struct VaccinationGraphView: View {
                     Text("till \(data?.items.last?.dateInstance ?? Date(), style: .date)")
                         .font(.system(.caption, design: .rounded))
                         .foregroundColor(.secondary)
+                    
+                    if showsLastDayInfo {
+                        VaccineCountsView(
+                            count: data?.items.last?.peopleVaccinated ?? "0",
+                            total: data?.items.last?.totalVaccination ?? "0"
+                        )
+                    }
                 }
             }
             .padding()
@@ -56,10 +64,11 @@ struct VaccinationGraphView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             VaccinationGraphView(data: .sample)
-            VaccinationGraphView(data: .sample)
+                .frame(width: 300, height: 150)
+            VaccinationGraphView(data: .sample, showsLastDayInfo: true)
                 .preferredColorScheme(.dark)
+                .frame(width: 300, height: 250)
         }
         .previewLayout(.sizeThatFits)
-        .frame(width: 300, height: 150)
     }
 }
