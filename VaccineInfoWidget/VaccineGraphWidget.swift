@@ -14,20 +14,36 @@ struct VaccineGraphProvider: TimelineProvider {
     }
     
     func getSnapshot(in context: Context, completion: @escaping (VaccineGraphEntry) -> Void) {
-        let entry = VaccineGraphEntry(date: Date(), data: .sample)
-        completion(entry)
+        fetchAllData { (data) in
+            let entry = VaccineGraphEntry(date: Date(), data: .init(items: data))
+            completion(entry)
+        }
     }
     
     func getTimeline(in context: Context, completion: @escaping (Timeline<VaccineGraphEntry>) -> Void) {
-        var entries: [VaccineGraphEntry] = []
-        
-        let currentDate = Date()
-        let entryDate = Calendar.current.date(byAdding: .hour, value: 12, to: currentDate)!
-        let entry = VaccineGraphEntry(date: entryDate, data: .sample)
-        entries.append(entry)
-        
-        let timeline = Timeline(entries: entries, policy: .atEnd)
-        completion(timeline)
+        fetchAllData { (vaccineData) in
+            var entries: [VaccineGraphEntry] = []
+            let currentDate = Date()
+            let entryDate = Calendar.current.date(byAdding: .hour, value: 12, to: currentDate)!
+            let entry = VaccineGraphEntry(date: entryDate, data: .init(items: vaccineData))
+            entries.append(entry)
+            
+            let timeline = Timeline(entries: entries, policy: .atEnd)
+            completion(timeline)
+        }
+    }
+    
+    private func fetchAllData(completion: @escaping ([VaccineData])->Void) {
+        let url = URL(string: "https://swiftuijam.herokuapp.com/allData/England")!
+        NetworkManager().fetch([VaccineData].self, from: url) { (result) in
+            switch result {
+            case .success(let data):
+                completion(data)
+            case .failure(let error):
+                print(error)
+                completion([])
+            }
+        }
     }
 }
 

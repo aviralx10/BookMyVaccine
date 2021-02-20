@@ -25,7 +25,7 @@ struct VaccineInfoView: View {
             Text("\(data?.location ?? "Country")")
                 .font(.system(.title3, design: .rounded))
             
-            Text(data?.date ?? Date(), style: .date)
+            Text(data?.dateInstance ?? Date(), style: .date)
                 .font(.system(size: 13, weight: .regular, design: .rounded))
                 .foregroundColor(.secondary)
         }
@@ -38,13 +38,14 @@ struct VaccineInfoView: View {
                 .cornerRadius(12)
             
             VStack(alignment: .trailing) {
-                Text("\(data?.people_vaccinated ?? 0)")
+                Text("\(data?.peopleVaccinated ?? "0")")
                     .font(.system(size: 24, weight: .semibold, design: .rounded))
                     .multilineTextAlignment(.trailing)
+                
                 HStack(spacing: 4) {
                     Text("of")
                         .font(.caption2)
-                    Text("\(data?.total_vaccinations ?? 0)")
+                    Text("\(data?.totalVaccination ?? "0")")
                         .font(.caption2)
                         .foregroundColor(.secondary)
                 }

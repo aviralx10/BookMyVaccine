@@ -37,6 +37,12 @@
 		D2FAD10925E12F3500740A51 /* VaccineGraphShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FAD10525E12EE100740A51 /* VaccineGraphShape.swift */; };
 		D2FAD10D25E12F6000740A51 /* GridShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FAD10C25E12F6000740A51 /* GridShape.swift */; };
 		D2FAD10E25E12F6000740A51 /* GridShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FAD10C25E12F6000740A51 /* GridShape.swift */; };
+		D2FAD11C25E1372300740A51 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FAD11B25E1372300740A51 /* NetworkManager.swift */; };
+		D2FAD11D25E1372300740A51 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FAD11B25E1372300740A51 /* NetworkManager.swift */; };
+		D2FAD12125E1400000740A51 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FAD12025E1400000740A51 /* Date+Extension.swift */; };
+		D2FAD12225E1400000740A51 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FAD12025E1400000740A51 /* Date+Extension.swift */; };
+		D2FAD12A25E1442B00740A51 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FAD12925E1442B00740A51 /* String+Extensions.swift */; };
+		D2FAD12B25E1442B00740A51 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FAD12925E1442B00740A51 /* String+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +96,9 @@
 		D2FAD0FE25E1209B00740A51 /* VaccinationGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccinationGraphView.swift; sourceTree = "<group>"; };
 		D2FAD10525E12EE100740A51 /* VaccineGraphShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccineGraphShape.swift; sourceTree = "<group>"; };
 		D2FAD10C25E12F6000740A51 /* GridShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridShape.swift; sourceTree = "<group>"; };
+		D2FAD11B25E1372300740A51 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		D2FAD12025E1400000740A51 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		D2FAD12925E1442B00740A51 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +154,8 @@
 			isa = PBXGroup;
 			children = (
 				0A72BCBC25E0808F0009F32F /* MKMapItem+Identifiable.swift */,
+				D2FAD12025E1400000740A51 /* Date+Extension.swift */,
+				D2FAD12925E1442B00740A51 /* String+Extensions.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -214,6 +225,7 @@
 		D2FAD0D525E0FD7E00740A51 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				D2FAD11125E1334700740A51 /* Networking */,
 				D2FAD0E025E1017C00740A51 /* Views */,
 				D2FAD0D625E0FD8C00740A51 /* Models */,
 			);
@@ -238,6 +250,14 @@
 				D2FAD10525E12EE100740A51 /* VaccineGraphShape.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		D2FAD11125E1334700740A51 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				D2FAD11B25E1372300740A51 /* NetworkManager.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -344,10 +364,13 @@
 				D2DBAAE125E047490005042D /* RootView.swift in Sources */,
 				820ACAC925E05A5100355377 /* SearchBar.swift in Sources */,
 				0A16726325E0611B0031C4FA /* LocationManager.swift in Sources */,
+				D2FAD12A25E1442B00740A51 /* String+Extensions.swift in Sources */,
+				D2FAD11C25E1372300740A51 /* NetworkManager.swift in Sources */,
 				D2FAD0E225E101A200740A51 /* VaccineInfoView.swift in Sources */,
 				D2FAD0EB25E11AD300740A51 /* VaccineGraphWidget.swift in Sources */,
 				820ACAC625E057F500355377 /* MapView.swift in Sources */,
 				D2FAD10D25E12F6000740A51 /* GridShape.swift in Sources */,
+				D2FAD12125E1400000740A51 /* Date+Extension.swift in Sources */,
 				0A72BCB625E0745E0009F32F /* NewBooking.swift in Sources */,
 				D2FAD10925E12F3500740A51 /* VaccineGraphShape.swift in Sources */,
 				D2DBAADF25E047490005042D /* BookMyVaccineApp.swift in Sources */,
@@ -363,7 +386,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2FAD0F525E11ED300740A51 /* VaccineGraphWidget.swift in Sources */,
+				D2FAD12225E1400000740A51 /* Date+Extension.swift in Sources */,
 				D2FAD10E25E12F6000740A51 /* GridShape.swift in Sources */,
+				D2FAD11D25E1372300740A51 /* NetworkManager.swift in Sources */,
+				D2FAD12B25E1442B00740A51 /* String+Extensions.swift in Sources */,
 				D2FAD0E725E101D400740A51 /* VaccineInfoView.swift in Sources */,
 				D2FAD0F925E11FD000740A51 /* BookMyVaccineWidgetBundle.swift in Sources */,
 				D2FAD0FF25E1209B00740A51 /* VaccinationGraphView.swift in Sources */,
@@ -509,6 +535,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"BookMyVaccine/Preview Content\"";
+				DEVELOPMENT_TEAM = MFK34378Q2;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = BookMyVaccine/Support/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -531,6 +558,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"BookMyVaccine/Preview Content\"";
+				DEVELOPMENT_TEAM = MFK34378Q2;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = BookMyVaccine/Support/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -551,6 +579,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MFK34378Q2;
 				INFOPLIST_FILE = VaccineInfoWidget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -571,6 +600,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MFK34378Q2;
 				INFOPLIST_FILE = VaccineInfoWidget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

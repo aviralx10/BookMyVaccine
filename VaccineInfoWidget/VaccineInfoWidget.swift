@@ -7,28 +7,47 @@
 
 import WidgetKit
 import SwiftUI
+import Combine
 
 struct VaccinationCountProvider: TimelineProvider {
+    
     func placeholder(in context: Context) -> VaccineDataEntry {
         VaccineDataEntry(date: Date(), data: nil)
     }
 
     func getSnapshot(in context: Context, completion: @escaping (VaccineDataEntry) -> ()) {
-        let entry = VaccineDataEntry(date: Date(), data: nil)
-        completion(entry)
+        fetchVaccineData { (data) in
+            let entry = VaccineDataEntry(date: Date(), data: data)
+            completion(entry)
+        }
     }
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         var entries: [VaccineDataEntry] = []
 
-        // Generate a timeline consisting of five entries an hour apart, starting from the current date.
-        let currentDate = Date()
-        let entryDate = Calendar.current.date(byAdding: .hour, value: 12, to: currentDate)!
-        let entry = VaccineDataEntry(date: entryDate, data: .sample1)
-        entries.append(entry)
+        fetchVaccineData { (data) in
+            let currentDate = Date()
+            let entryDate = Calendar.current.date(byAdding: .hour, value: 12, to: currentDate)!
+            let entry = VaccineDataEntry(date: entryDate, data: data)
+            entries.append(entry)
 
-        let timeline = Timeline(entries: entries, policy: .atEnd)
-        completion(timeline)
+            let timeline = Timeline(entries: entries, policy: .atEnd)
+            completion(timeline)
+        }
+    }
+    
+    private func fetchVaccineData(completion: @escaping (VaccineData?)->Void) {
+        let url = URL(string: "https://swiftuijam.herokuapp.com/newestData/England")!
+        NetworkManager().fetch(VaccineData.self, from: url) { (result) in
+            switch result {
+            case .success(let data):
+                print(data)
+                completion(data)
+            case .failure(let error):
+                print(error)
+                completion(nil)
+            }
+        }
     }
 }
 
