@@ -9,23 +9,26 @@ import WidgetKit
 import SwiftUI
 import Combine
 
-struct VaccinationCountProvider: TimelineProvider {
+struct VaccinationCountProvider: IntentTimelineProvider {
+    typealias Entry = VaccineDataEntry
+    typealias Intent = ContryPickerIntent
     
     func placeholder(in context: Context) -> VaccineDataEntry {
         VaccineDataEntry(date: Date(), data: nil)
     }
 
-    func getSnapshot(in context: Context, completion: @escaping (VaccineDataEntry) -> ()) {
-        fetchVaccineData { (data) in
+    func getSnapshot(for configuration: ContryPickerIntent, in context: Context, completion: @escaping (VaccineDataEntry) -> Void) {
+        let country = VaccineCountry(rawValue: configuration.country.rawValue) ?? .UnitedStates
+        fetchVaccineData(country: country) { (data) in
             let entry = VaccineDataEntry(date: Date(), data: data)
             completion(entry)
         }
     }
-
-    func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        var entries: [VaccineDataEntry] = []
-
-        fetchVaccineData { (data) in
+    
+    func getTimeline(for configuration: ContryPickerIntent, in context: Context, completion: @escaping (Timeline<VaccineDataEntry>) -> Void) {
+        let country = VaccineCountry(rawValue: configuration.country.rawValue) ?? .UnitedStates
+        fetchVaccineData(country: country) { (data) in
+            var entries: [VaccineDataEntry] = []
             let currentDate = Date()
             let entryDate = Calendar.current.date(byAdding: .hour, value: 12, to: currentDate)!
             let entry = VaccineDataEntry(date: entryDate, data: data)
@@ -36,15 +39,13 @@ struct VaccinationCountProvider: TimelineProvider {
         }
     }
     
-    private func fetchVaccineData(completion: @escaping (VaccineData?)->Void) {
-        let url = URL(string: "https://swiftuijam.herokuapp.com/newestData/England")!
+    private func fetchVaccineData(country: VaccineCountry, completion: @escaping (VaccineData?)->Void) {
+        let url = URL(string: "https://swiftuijam.herokuapp.com/newestData/\(country.searchKey)")!
         NetworkManager().fetch(VaccineData.self, from: url) { (result) in
             switch result {
             case .success(let data):
-                print(data)
                 completion(data)
-            case .failure(let error):
-                print(error)
+            case .failure:
                 completion(nil)
             }
         }
@@ -68,10 +69,10 @@ struct VaccineInfoWidget: Widget {
     let kind: String = "VaccineInfoWidget"
     
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: VaccinationCountProvider()) { entry in
+        IntentConfiguration(kind: kind, intent: ContryPickerIntent.self, provider: VaccinationCountProvider()) { (entry) in
             VaccineInfoWidgetEntryView(entry: entry)
         }
-        .configurationDisplayName("Daily Vaccinations")
+        .configurationDisplayName("Daily Vaccination Count")
         .description("Displays the daily vaccinations count for the country.")
         .supportedFamilies([.systemSmall])
     }
