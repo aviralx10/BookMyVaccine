@@ -11,9 +11,9 @@ import CoreImage.CIFilterBuiltins
 struct MyBookings: View {
     //@Binding var isBooked : Bool
     //@State var myString : String
-    
-    let context=CIContext()
-    let filter=CIFilter.qrCodeGenerator()
+
+    let context = CIContext()
+    let filter = CIFilter.qrCodeGenerator()
     var body: some View {
         ScrollView(.vertical){
             VStack{
@@ -45,7 +45,7 @@ struct MyBookings: View {
                         .fontWeight(.bold)
                         .padding(10)
                 }.padding(20)
-                
+
                 Text("CONTACTLESS QR CODE")
                     .fontWeight(.heavy)
                     .frame(width: 210, height: 30, alignment: .center)
@@ -59,11 +59,11 @@ struct MyBookings: View {
                     .scaledToFit()
                     .frame(width:200,height:200)
                 Spacer()
-                
+
             }
         }
-            
-        
+
+
     }
     func generateQRCode(from string: String)->UIImage{
         let data = Data(string.utf8)
@@ -78,4 +78,3 @@ struct MyBookings: View {
             return UIImage(systemName: "xmark.circle") ?? UIImage()
     }
 }
-
