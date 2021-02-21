@@ -1,4 +1,4 @@
-# BOOK MY APP
+# BOOK MY VACCINE
 An iOS App that serves as a medium for people to book COVID vaccines from the comfort of their homes.
 
 # APP DEMO <br>
