@@ -126,7 +126,7 @@ final class MyBookingsViewModel: ObservableObject {
             } else {
                 return nil
             }
-        }
+        }.sorted { $0.time < $1.time }
     }
 
     init() {
