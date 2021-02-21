@@ -10,7 +10,7 @@ The general features of this App are-
 1. **BOOKING VACCINE SLOT** - With the medium of this App, Users can look for their nearest Hospitals, book the available time slots and select the type of vaccines they want and all this can be done with just a few clicks from this App.
 2. **WIDGET** - We have incorporated Widgets too with the help of WidgetKit and we display the total number of people getting vaccinated in a specific country with the help of the widgets as we wanted to be optimistic of the fact that we are slowly defeating COVID-19.<br>
 
-<a href="https://drive.google.com/uc?export=view&id=1qaAIt7zv_7_VIsBHEQT0ulV4VWXUKe_7"><img src="https://drive.google.com/uc?export=view&id=1qaAIt7zv_7_VIsBHEQT0ulV4VWXUKe_7" align="left" height="100" width="100" ></a>
+<a href="https://drive.google.com/uc?export=view&id=1qaAIt7zv_7_VIsBHEQT0ulV4VWXUKe_7"><img src="https://drive.google.com/uc?export=view&id=1qaAIt7zv_7_VIsBHEQT0ulV4VWXUKe_7" height="400" width="400" ></a>
 <br> 
 
 3. **QR CODE** - Once the user is finished with booking his/her slot, we provide them with a QR code that is generately automatically with the help of their username.
@@ -116,14 +116,14 @@ This uuid is the same as in hospital_slots table.
 
 # WHAT'S NEXT <br>
 **VOICE OVER** - We could surely implement a VoiceOver feature for the Differently Abled so that they can also easily access the App.
-**SCALABILITY** - Right now, our app only has a handful of data of few hospitals and time slots, we could surely add more Hospitals of different cities and their time slots too.
+**SCALABILITY** - Right now, our app only has a handful of data of few hospitals and time slots, we could surely add more Hospitals of different cities and their time slots too.<br>
 **IMPLEMENTING LOGIN FUNCTIONALITY BY USING APPLE,FACEBOOK,TWITTER ACCOUNTS OF USERS** 
 <br>
 # TECHNOLOGIES USED<br>
-SWIFTUI
-WIDGETKIT
-NODEJS
-MAPKIT
+SWIFTUI,
+WIDGETKIT,
+NODEJS,
+MAPKIT,
 COMBINE
 
 
