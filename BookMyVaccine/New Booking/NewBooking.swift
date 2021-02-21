@@ -3,33 +3,29 @@ import MapKit
 
 struct NewBooking: View {
     @StateObject private var viewModel = NewBookingViewModel()
-    @State private var selectedHospital: String?
+    @State private var selectedHospital: Hospital?
     @State private var showSelectedHospital: Bool = false
 
     var body: some View {
         VStack {
             MapView(region: $viewModel.region, places: viewModel.places) { place in
-                if let location = place.name! {
-                    if location == selectedHospital {
-                        HospitalDetails(hospitalName: location) {
-                            showSelectedHospital = true
-                        }
-                    } else if selectedHospital == nil {
-                        HospitalPin(hospitalName: location, highlighted: false)
+                if place.name == selectedHospital?.name {
+                    HospitalDetails(hospitalName: place.name) {
+                        showSelectedHospital = true
                     }
+                } else if selectedHospital == nil {
+                    HospitalPin(hospitalName: place.name, highlighted: false)
                 }
             }
             SearchBar(text: $viewModel.searchText)
             List(viewModel.places) { place in
-                if let name = place.name {
-                    if selectedHospital == name {
-                        navLink(for: name)
-                    } else {
-                        Button {
-                            centerInHospital(place: place)
-                        } label: {
-                            Text("\(name)")
-                        }
+                if selectedHospital?.name == place.name {
+                        navLink(for: place.name)
+                } else {
+                    Button {
+                        centerInHospital(place: place)
+                    } label: {
+                        Text("\(place.name)")
                     }
                 }
             }
@@ -38,7 +34,7 @@ struct NewBooking: View {
 
     func navLink(for name: String) -> some View {
         NavigationLink(
-            destination: HospitalBooking(hospitalName: selectedHospital!),
+            destination: HospitalBooking(hospital: selectedHospital!),
             isActive: $showSelectedHospital
         ) {
             Text("\(name)")
@@ -46,17 +42,15 @@ struct NewBooking: View {
         }
     }
 
-    func centerInHospital(place: MKMapItem) {
-        guard let name = place.name else { return }
-        if selectedHospital == name {
+    func centerInHospital(place: Hospital) {
+        if selectedHospital?.name == place.name {
             withAnimation {
                 selectedHospital = nil
             }
         } else {
-            selectedHospital = name
-            guard let location = place.placemark.location else { return }
-            let latitude = location.coordinate.latitude
-            let longitude = location.coordinate.longitude + 0.01
+            selectedHospital = place
+            let latitude = place.latitude
+            let longitude = place.longitude + 0.01
             withAnimation {
                 viewModel.region = MKCoordinateRegion(
                     center: .init(latitude: latitude, longitude: longitude),

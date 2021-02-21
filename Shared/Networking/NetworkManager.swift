@@ -11,11 +11,51 @@ import Combine
 struct NetworkManager {
     var session = URLSession.shared
 
+    static var encoder: JSONEncoder = {
+        let decoder = JSONEncoder()
+        decoder.dateEncodingStrategy = .iso8601
+        return decoder
+    }()
+
     static var decoder: JSONDecoder = {
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .iso8601
         return decoder
     }()
+
+    func create<T: Codable>(_ value: T, on url: URL) -> AnyPublisher<T, Error> {
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.httpBody = try? Self.encoder.encode(value)
+        if let data = request.httpBody {
+            if let jsonObject = try? JSONSerialization.jsonObject(
+                with: data, options: []
+            ) {
+                if let data = try? JSONSerialization.data(
+                    withJSONObject: jsonObject,
+                    options: [.prettyPrinted]
+                ) {
+                    print(String(data: data, encoding: .utf8)!)
+                }
+            }
+        }
+        return session.dataTaskPublisher(for: request)
+            .map(\.data)
+            .handleEvents(receiveOutput: { data in
+                if let jsonObject = try? JSONSerialization.jsonObject(
+                    with: data, options: []
+                ) {
+                    if let data = try? JSONSerialization.data(
+                        withJSONObject: jsonObject,
+                        options: [.prettyPrinted]
+                    ) {
+                        print(String(data: data, encoding: .utf8)!)
+                    }
+                }
+            })
+            .decode(type: T.self, decoder: Self.decoder)
+            .eraseToAnyPublisher()
+    }
 
     func fetch<T: Decodable>(_ type: T.Type = T.self, from url: URL) -> AnyPublisher<T, Error> {
         let request = URLRequest(url: url)

@@ -11,4 +11,18 @@ extension Date {
     static var formatter: DateFormatter {
         DateFormatter()
     }
+
+    static var timeFormatter: DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .none
+        formatter.timeStyle = .medium
+        return formatter
+    }
+
+    static var dateOnlyFormatter: DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .none
+        return formatter
+    }
 }

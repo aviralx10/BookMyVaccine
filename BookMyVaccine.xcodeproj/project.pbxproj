@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		0A16726325E0611B0031C4FA /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A16726225E0611B0031C4FA /* LocationManager.swift */; };
+		0A3282C925E23EE600F430DD /* Hospital.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3282C825E23EE600F430DD /* Hospital.swift */; };
 		0A71FC6D25E196AC00AE64B9 /* MyBookings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A71FC6C25E196AC00AE64B9 /* MyBookings.swift */; };
 		0A72BCB625E0745E0009F32F /* NewBooking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A72BCB525E0745E0009F32F /* NewBooking.swift */; };
 		0A72BCB925E07ECB0009F32F /* NewBookingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A72BCB825E07ECB0009F32F /* NewBookingViewModel.swift */; };
-		0A72BCBD25E0808F0009F32F /* MKMapItem+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A72BCBC25E0808F0009F32F /* MKMapItem+Identifiable.swift */; };
 		0A84FF4B25E1C5AE00ADDE04 /* HospitalPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A84FF4A25E1C5AE00ADDE04 /* HospitalPin.swift */; };
 		0A84FF5A25E1D30500ADDE04 /* Appointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A84FF5925E1D30500ADDE04 /* Appointment.swift */; };
 		0A84FF6225E2206000ADDE04 /* HospitalBooking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A84FF6125E2206000ADDE04 /* HospitalBooking.swift */; };
@@ -83,10 +83,10 @@
 
 /* Begin PBXFileReference section */
 		0A16726225E0611B0031C4FA /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		0A3282C825E23EE600F430DD /* Hospital.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hospital.swift; sourceTree = "<group>"; };
 		0A71FC6C25E196AC00AE64B9 /* MyBookings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBookings.swift; sourceTree = "<group>"; };
 		0A72BCB525E0745E0009F32F /* NewBooking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBooking.swift; sourceTree = "<group>"; };
 		0A72BCB825E07ECB0009F32F /* NewBookingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBookingViewModel.swift; sourceTree = "<group>"; };
-		0A72BCBC25E0808F0009F32F /* MKMapItem+Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKMapItem+Identifiable.swift"; sourceTree = "<group>"; };
 		0A84FF4A25E1C5AE00ADDE04 /* HospitalPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalPin.swift; sourceTree = "<group>"; };
 		0A84FF5925E1D30500ADDE04 /* Appointment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appointment.swift; sourceTree = "<group>"; };
 		0A84FF6125E2206000ADDE04 /* HospitalBooking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalBooking.swift; sourceTree = "<group>"; };
@@ -179,7 +179,6 @@
 		0A72BCBB25E080800009F32F /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				0A72BCBC25E0808F0009F32F /* MKMapItem+Identifiable.swift */,
 				D2FAD12025E1400000740A51 /* Date+Extension.swift */,
 				D2FAD12925E1442B00740A51 /* String+Extensions.swift */,
 			);
@@ -191,6 +190,7 @@
 			children = (
 				0A84FF5925E1D30500ADDE04 /* Appointment.swift */,
 				823AC4D525E1917F005FD521 /* User.swift */,
+				0A3282C825E23EE600F430DD /* Hospital.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -433,11 +433,11 @@
 				823AC4CE25E18E2F005FD521 /* Login.swift in Sources */,
 				D2DBAADF25E047490005042D /* BookMyVaccineApp.swift in Sources */,
 				0A84FF5A25E1D30500ADDE04 /* Appointment.swift in Sources */,
+				0A3282C925E23EE600F430DD /* Hospital.swift in Sources */,
 				0A72BCB925E07ECB0009F32F /* NewBookingViewModel.swift in Sources */,
 				D2FAD0EF25E11B3900740A51 /* VaccineGraphData.swift in Sources */,
 				0A71FC6D25E196AC00AE64B9 /* MyBookings.swift in Sources */,
 				823AC4D225E1910C005FD521 /* RootView.swift in Sources */,
-				0A72BCBD25E0808F0009F32F /* MKMapItem+Identifiable.swift in Sources */,
 				D2FAD10225E120D300740A51 /* VaccinationGraphView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

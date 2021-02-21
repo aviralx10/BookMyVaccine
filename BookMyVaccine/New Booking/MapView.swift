@@ -10,13 +10,13 @@ import MapKit
 
 struct MapView<Annotation: View>: View {
     @Binding var region: MKCoordinateRegion
-    let places: [MKMapItem]
-    let annotationContent: (MKMapItem) -> Annotation
+    let places: [Hospital]
+    let annotationContent: (Hospital) -> Annotation
 
     init(
         region: Binding<MKCoordinateRegion>,
-        places: [MKMapItem],
-        @ViewBuilder annotationContent: @escaping (MKMapItem) -> Annotation
+        places: [Hospital],
+        @ViewBuilder annotationContent: @escaping (Hospital) -> Annotation
     ) {
         self._region = region
         self.places = places
@@ -29,7 +29,7 @@ struct MapView<Annotation: View>: View {
             annotationItems: places
         ) { place in
             MapAnnotation(
-                coordinate: place.placemark.coordinate,
+                coordinate: CLLocationCoordinate2D(latitude: place.latitude, longitude: place.longitude),
                 content: { annotationContent(place) }
             )
         }

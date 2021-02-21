@@ -1,7 +1,7 @@
 import SwiftUI
 protocol Appointment {
     var hospitalID: String { get set }
-    var time: String  { get set }
+    var time: Date  { get set }
     var patientID: String { get set }
 }
 
@@ -9,10 +9,14 @@ protocol QRCodePresentable {
     var qrCode: String { get }
 }
 
-struct PendingAppointment: Appointment {
+struct PendingAppointment: Appointment, Hashable {
     var hospitalID: String
-    var time: String
+    var time: Date
     var patientID: String
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine("\(hospitalID)\(time)\(patientID)")
+    }
 }
 
 extension PendingAppointment: Encodable {
@@ -30,7 +34,7 @@ extension PendingAppointment: Encodable {
 
 struct BookedAppointment: Appointment, QRCodePresentable {
     var hospitalID: String
-    var time: String
+    var time: Date
     var patientID: String
     var qrCode: String
 }
@@ -40,7 +44,7 @@ extension BookedAppointment: Decodable {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.qrCode = try container.decode(String.self, forKey: .id)
-        self.time = try container.decode(String.self, forKey: .id)
+        self.time = try container.decode(Date.self, forKey: .id)
         let hospital = try container.nestedContainer(keyedBy: HospitalCodingKeys.self, forKey: .hospital)
         self.hospitalID = try hospital.decode(String.self, forKey: .id)
         let patient = try container.nestedContainer(keyedBy: PatientCodingKeys.self, forKey: .patient)
