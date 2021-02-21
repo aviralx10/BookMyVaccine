@@ -24,6 +24,9 @@
 		D2DBAAE125E047490005042D /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DBAAE025E047490005042D /* RootView.swift */; };
 		D2DBAAE325E0474A0005042D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2DBAAE225E0474A0005042D /* Assets.xcassets */; };
 		D2DBAAE625E0474A0005042D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2DBAAE525E0474A0005042D /* Preview Assets.xcassets */; };
+		D2F749A825E246D00064F45F /* ContryPickerIntent.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = D2F749A725E246D00064F45F /* ContryPickerIntent.intentdefinition */; };
+		D2F749AB25E251920064F45F /* ContryPickerIntent.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = D2F749A725E246D00064F45F /* ContryPickerIntent.intentdefinition */; };
+		D2F749B125E251D70064F45F /* VaccineCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F749B025E251D70064F45F /* VaccineCountry.swift */; };
 		D2FAD0C325E0FC1200740A51 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2FAD0C225E0FC1200740A51 /* WidgetKit.framework */; };
 		D2FAD0C525E0FC1200740A51 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2FAD0C425E0FC1200740A51 /* SwiftUI.framework */; };
 		D2FAD0C825E0FC1200740A51 /* VaccineInfoWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FAD0C725E0FC1200740A51 /* VaccineInfoWidget.swift */; };
@@ -97,6 +100,8 @@
 		D2DBAAE225E0474A0005042D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D2DBAAE525E0474A0005042D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D2DBAAE725E0474A0005042D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D2F749A725E246D00064F45F /* ContryPickerIntent.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = ContryPickerIntent.intentdefinition; sourceTree = "<group>"; };
+		D2F749B025E251D70064F45F /* VaccineCountry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccineCountry.swift; sourceTree = "<group>"; };
 		D2FAD0C025E0FC1200740A51 /* VaccineInfoWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = VaccineInfoWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2FAD0C225E0FC1200740A51 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		D2FAD0C425E0FC1200740A51 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -249,6 +254,7 @@
 				D2FAD0EA25E11AD300740A51 /* VaccineGraphWidget.swift */,
 				D2FAD0C925E0FC1300740A51 /* Assets.xcassets */,
 				D2FAD0CB25E0FC1300740A51 /* Info.plist */,
+				D2F749A725E246D00064F45F /* ContryPickerIntent.intentdefinition */,
 			);
 			path = VaccineInfoWidget;
 			sourceTree = "<group>";
@@ -268,6 +274,7 @@
 			children = (
 				D2FAD0D725E0FDA500740A51 /* VaccineData.swift */,
 				D2FAD0EE25E11B3900740A51 /* VaccineGraphData.swift */,
+				D2F749B025E251D70064F45F /* VaccineCountry.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -405,6 +412,7 @@
 				820ACAD125E135D900355377 /* MyBookings.swift in Sources */,
 				820ACAC625E057F500355377 /* MapView.swift in Sources */,
 				823AC4CA25E18DC7005FD521 /* Register.swift in Sources */,
+				D2F749AB25E251920064F45F /* ContryPickerIntent.intentdefinition in Sources */,
 				823AC4DA25E1925C005FD521 /* Header.swift in Sources */,
 				D2FAD10D25E12F6000740A51 /* GridShape.swift in Sources */,
 				D2FAD12125E1400000740A51 /* Date+Extension.swift in Sources */,
@@ -427,6 +435,8 @@
 				D2FAD0F525E11ED300740A51 /* VaccineGraphWidget.swift in Sources */,
 				D2FAD12225E1400000740A51 /* Date+Extension.swift in Sources */,
 				D2FAD10E25E12F6000740A51 /* GridShape.swift in Sources */,
+				D2F749B125E251D70064F45F /* VaccineCountry.swift in Sources */,
+				D2F749A825E246D00064F45F /* ContryPickerIntent.intentdefinition in Sources */,
 				D2FAD11D25E1372300740A51 /* NetworkManager.swift in Sources */,
 				D2FAD12B25E1442B00740A51 /* String+Extensions.swift in Sources */,
 				D2FAD13925E14C2000740A51 /* VaccineCountsView.swift in Sources */,
