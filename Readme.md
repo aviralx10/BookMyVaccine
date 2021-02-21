@@ -32,6 +32,7 @@ We started our project with building the system design and started to brainstorm
 <br>
 <a href="https://drive.google.com/uc?export=view&id=1l_f0clkDSXqn2MgqeQGjlqc4QibQo6Xo"><img src="https://drive.google.com/uc?export=view&id=1l_f0clkDSXqn2MgqeQGjlqc4QibQo6Xo"  ></a>
 <br>
+
 ## API<br>
 <br>
 
@@ -118,9 +119,9 @@ This uuid is the same as in hospital_slots table.
 1. We had some issues in order to implement the QR code logic, and we didnt want to provide the QR code to the users who have not booked , so that was a bummer for us, but we overcame that problem shortly.
 
 # WHAT'S NEXT <br>
-**VOICE OVER** - We could surely implement a VoiceOver feature for the Differently Abled so that they can also easily access the App.
-**SCALABILITY** - Right now, our app only has a handful of data of few hospitals and time slots, we could surely add more Hospitals of different cities and their time slots too.<br>
-**IMPLEMENTING LOGIN FUNCTIONALITY BY USING APPLE,FACEBOOK,TWITTER ACCOUNTS OF USERS** 
+1. **VOICE OVER** - We could surely implement a VoiceOver feature for the Differently Abled so that they can also easily access the App.
+2. **SCALABILITY** - Right now, our app only has a handful of data of few hospitals and time slots, we could surely add more Hospitals of different cities and their time slots too.<br>
+3. **IMPLEMENTING LOGIN FUNCTIONALITY BY USING APPLE,FACEBOOK,TWITTER ACCOUNTS OF USERS** 
 <br>
 # TECHNOLOGIES USED<br>
 SWIFTUI,
