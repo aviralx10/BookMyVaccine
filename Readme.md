@@ -16,27 +16,27 @@ The general features of this App are-
 ## SYSTEM DESIGN
 <br> 
 We started our project with building the system design and started to brainstorm ideas in order to make our USE CASE DIAGRAMS AND THE WIREFRAMES. <br>
-### USE CASE DIAGRAM<br>
+### USE CASE DIAGRAM <br>
 <br>
-![image](Screenshot 2021-02-21 at 2.05.06 PM.png)<br>
-### WIREFRAME<br>
+![image](Screenshot 2021-02-21 at 2.05.06 PM.png) <br>
+### WIREFRAME <br>
 <br>
-![image](Screenshot 2021-02-21 at 2.07.52 PM.png)<br>
+![image](Screenshot 2021-02-21 at 2.07.52 PM.png) <br>
 ## API<br>
 <br>
-We started working on the client and server side by side and successfully implemented our bookings API with the help of NodeJS and ExpressJS.We have hosted our API on swiftuijam.herokuapp.com.
-Our API logic-
-   - GET to check available timeslot
-   - POST to create appointment, send back a hash that can be made into a QR code
-   - GET to show time, location, vaccine info and hash after appointment is booked
- * How to uniquely identify each hospital
-   - MapKit will find hospitals near you
-   - MapKit will provide the coordinates of the hospital
-   - When requesting to backend, send the coordinates, so backend will hash it and check records in the database
-   - If two hospitals ends up with same hash, send 400 Bad Request
+We started working on the client and server side by side and successfully implemented our bookings API with the help of NodeJS and ExpressJS.We have hosted our API on swiftuijam.herokuapp.com.<br>
+Our API logic-<br>
+   - GET to check available timeslot<br>
+   - POST to create appointment, send back a hash that can be made into a QR code<br>
+   - GET to show time, location, vaccine info and hash after appointment is booked<br>
+ * How to uniquely identify each hospital<br>
+   - MapKit will find hospitals near you<br>
+   - MapKit will provide the coordinates of the hospital<br>
+   - When requesting to backend, send the coordinates, so backend will hash it and check records in the database<br>
+   - If two hospitals ends up with same hash, send 400 Bad Request<br>
 
 
-**API address: [https://swiftuijam.herokuapp.com/](https://swiftuijam.herokuapp.com)**
+**API address: [https://swiftuijam.herokuapp.com/](https://swiftuijam.herokuapp.com)**<br>
 
 ## Endpoints:
 
