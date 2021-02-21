@@ -13,14 +13,17 @@ The general features of this App are-
 4.  **DARK MODE AND LIGHT MODE** - We have implemented this App in both Dark and Light Mode and users can choose either of the two according to thier convinience.
 
 # BUILDING THE APP<br>
-**SYSTEM DESIGN**<h2>
+## SYSTEM DESIGN
 <br> 
 We started our project with building the system design and started to brainstorm ideas in order to make our USE CASE DIAGRAMS AND THE WIREFRAMES. <br>
-USE CASE DIAGRAM<br>
+### USE CASE DIAGRAM<br>
+<br>
 ![image](Screenshot 2021-02-21 at 2.05.06 PM.png)<br>
-WIREFRAME<br>
+### WIREFRAME<br>
+<br>
 ![image](Screenshot 2021-02-21 at 2.07.52 PM.png)<br>
-**API**<br>
+## API<br>
+<br>
 We started working on the client and server side by side and successfully implemented our bookings API with the help of NodeJS and ExpressJS.We have hosted our API on swiftuijam.herokuapp.com.
 Our API logic-
    - GET to check available timeslot
@@ -33,10 +36,73 @@ Our API logic-
    - If two hospitals ends up with same hash, send 400 Bad Request
 
 
-SOME INTERESTING ENDPOINTS IN OUR API
-1. GET REQUEST - bookAppointment/userID/HospitalName/Slot - This endpoint would help us check if the user is already booked or not.
-2. GET REQUEST - bookAppointment/HospitalName - This endpoint would let us know about the different time slots available at a particular Hospital.
-3. POST REQUEST - /bookAppointment - This endpoint would help the user book his.her appointment.
+**API address: [https://swiftuijam.herokuapp.com/](https://swiftuijam.herokuapp.com)**
+
+## Endpoints:
+
+
+**Part related to handle registration to be vaccinated**
+
+
+1. /slots/:hospitalName [GET]  
+Endpoint returns all slots for needed hospital  
+Params:  
+* hospitalName: String
+
+2. /appointments/:userId [GET]  
+Endpoint returns appointments for user ID  
+Params:  
+* userId: String
+
+3. /bookAppointment [POST]  
+Endpoint books appointment and returns its uuid if slot is free  
+Params needed:  
+* userId: String
+* hospitalName: String
+* timeSlot: String
+
+4. /addHospital [POST]  
+Endpoint creates new hospital  
+Params needed:  
+* hospitalName: String
+
+5. /clearSlotsData [GET]  
+Util endpoint to clear database records  
+
+6. /clearAppointmentsData [GET]  
+Util endpoint to clear database records
+
+
+
+**Part related to fetch data related to numbers of vaccinations in different countries**
+
+7. /newestData/:countryName [GET]  
+Endpoint returns the newest statistics for the country selected in request parameters  
+Params needed:
+* countryName: String
+
+8. /allData/:countryName [GET]  
+Endpoint returns the all statistics for some country selected in request parameters  
+Params needed: 
+* countryName: String
+
+
+## Database schema:
+
+**hosital_slots** table
+* hospital_name [String]  
+The name of hospital  
+* slots [Dictionary<String, String>]  
+List of the possible slots. Each slot has two values *free* or *value of uuid*  
+If it's free then it's possibe to book appointment for that time otherwise it's uuid of appoitment.  
+ 
+**appointment** table
+* uuid [String]  
+This uuid is the same as in hospital_slots table.  
+* user_id [String]
+* hospital_name [String]
+* time_slot [String]
+
 
 # TECHNOLOGIES USED<br>
 SWIFTUI,WIDGETKIT,NODE,MAPKIT
