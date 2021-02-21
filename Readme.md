@@ -1,10 +1,10 @@
 # Book My Vaccine
 An iOS app that serves as a medium for people to book COVID-19 vaccines from the comfort of their homes.
 
-# App Demo
+## App Demo
 [Link to Video](https://player.vimeo.com/video/515028720)
 
-# What It Does
+## What It Does
 We wanted to be apprehensive of the fact that the general masses are now getting vaccinated and we wanted to help more to this process. So we created BookMyVaccine. 
 
 #### Booking Vaccines
@@ -16,7 +16,7 @@ Users can look for their nearest hospitals, book the available time slots and se
 We have incorporated Widgets too with the help of `WidgetKit` and we display the total number of people getting vaccinated in a specific country with the help of the widgets as we wanted to be optimistic of the fact that we are slowly defeating COVID-19.
 
 <a href="https://drive.google.com/uc?export=view&id=1qaAIt7zv_7_VIsBHEQT0ulV4VWXUKe_7"><img src="https://drive.google.com/uc?export=view&id=1qaAIt7zv_7_VIsBHEQT0ulV4VWXUKe_7" width="400" ></a>
- 
+
 
 ### **QR Code**
 
@@ -30,22 +30,18 @@ Once the user is finished with booking his/her slot, we provide them with a QR c
 
 We have implemented this app in both Dark and Light Mode and users can choose either of the two according to thier convenience.
 
-# Building the App
-## System Design
-
- We started our project with building the system design and started to brainstorm ideas in order to make our Use Case Diagrams and wireframes. 
-
-## Use Case Diagram
+## Building the App
+### Use Case Diagram
 
 <a href="https://drive.google.com/uc?export=view&id=1YjSUu7016VxYXohm00TETqbdfRPdlBNk"><img src="https://drive.google.com/uc?export=view&id=1YjSUu7016VxYXohm00TETqbdfRPdlBNk" ></a>
 
 
-## Wireframe
+### Wireframe
 
 <a href="https://drive.google.com/uc?export=view&id=1l_f0clkDSXqn2MgqeQGjlqc4QibQo6Xo"><img src="https://drive.google.com/uc?export=view&id=1l_f0clkDSXqn2MgqeQGjlqc4QibQo6Xo"  ></a>
 
 
-## API
+### API
 We started working on the client and server side by side and successfully implemented our bookings API with the help of Node.JS and Express.JS. We have hosted our API on Heroku.
 
    - `GET` to check available timeslot
@@ -57,7 +53,7 @@ We started working on the client and server side by side and successfully implem
    - When requesting to backend, send the coordinates, so backend will hash it and check records in the database
    - If two hospitals ends up with same hash, send 400 Bad Request
 
-## Endpoints
+### Endpoints
 
 
 **Part related to handle registration to be vaccinated**
@@ -106,7 +102,7 @@ Params needed:
 * `countryName: String`
 
 
-## Database schema:
+### Database schema
 
 **hosital_slots** table
 * `hospital_name` [String] 
@@ -122,16 +118,16 @@ This uuid is the same as in hospital_slots table.
 * hospital_name: [String]
 * `time_slot: [String]`
 
-# Problems We Faced 
+## Problems We Faced 
 We had some issues in order to implement the QR code logic, and we didnt want to provide the QR code to the users who have not booked , so that was a bummer for us, but we overcame that problem shortly.
 
-# What's Next 
+## What's Next 
 1. **Voice Over** - We could surely implement a VoiceOver feature for the Differently Abled so that they can also easily access the app.
 2. **Scalability** - Right now, our app only has a handful of data of few hospitals and time slots, we could surely add more hospitals of different cities and their time slots too.
 3. **OAuth** which allows users to login functionality by using their Apple, Facebook, or Twitter account
 
 
-# Technologies Used
+## Technologies Used
 - SwiftUI
 - WidgetKit
 - Node.JS
