@@ -13,7 +13,9 @@ The general features of this App are-
 <a href="https://drive.google.com/uc?export=view&id=1qaAIt7zv_7_VIsBHEQT0ulV4VWXUKe_7"><img src="https://drive.google.com/uc?export=view&id=1qaAIt7zv_7_VIsBHEQT0ulV4VWXUKe_7" height="400" width="400" ></a>
 <br> 
 
-3. **QR CODE** - Once the user is finished with booking his/her slot, we provide them with a QR code that is generately automatically with the help of their username.
+3. **QR CODE** - Once the user is finished with booking his/her slot, we provide them with a QR code that is generately automatically with the help of their username.<br>
+<a href="https://drive.google.com/uc?export=view&id=1q7_8kMTg1Z1BAyyykqsgGm0H5B0xv9cA"><img src="https://drive.google.com/uc?export=view&id=1q7_8kMTg1Z1BAyyykqsgGm0H5B0xv9cA" height="400" width="400" ></a>
+<br>
 4.  **DARK MODE AND LIGHT MODE** - We have implemented this App in both Dark and Light Mode and users can choose either of the two according to thier convinience.
 
 # BUILDING THE APP<br>
@@ -23,12 +25,13 @@ We started our project with building the system design and started to brainstorm
 
 ## USE CASE DIAGRAM <br>
 <br>
-![Screenshot](Screenshot 2021-02-21 at 2.05.06 PM.png) <br>
+<a href="https://drive.google.com/uc?export=view&id=1YjSUu7016VxYXohm00TETqbdfRPdlBNk"><img src="https://drive.google.com/uc?export=view&id=1YjSUu7016VxYXohm00TETqbdfRPdlBNkA" height="400" width="400" ></a>
+<br>
 
 ## WIREFRAME <br>
 <br>
-
-![image](Screenshot 2021-02-21 at 2.07.52 PM.png) <br>
+<a href="https://drive.google.com/uc?export=view&id=1l_f0clkDSXqn2MgqeQGjlqc4QibQo6Xo"><img src="https://drive.google.com/uc?export=view&id=1l_f0clkDSXqn2MgqeQGjlqc4QibQo6Xo" height="400" width="400" ></a>
+<br>
 ## API<br>
 <br>
 
