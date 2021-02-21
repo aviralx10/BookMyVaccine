@@ -53,7 +53,7 @@ final class LoginViewModel: ObservableObject {
     var subscribers = Set<AnyCancellable>()
     func createNewUser(with name: String, completion: @escaping (User) -> Void) {
         let user = User(name: name, appointments: [])
-        let url = URL(string: "https://bookmyvaccine.herokuapp.com/patients")!
+        let url = URL(string: "\(URL.current)/patients")!
         NetworkManager().create(user, on: url)
             .sink(receiveCompletion: { _ in
 

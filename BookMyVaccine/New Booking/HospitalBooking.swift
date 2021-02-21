@@ -18,7 +18,7 @@ final class HospitalBookingViewModel: ObservableObject {
     var hospital: Hospital?
 
     func fetchAppointments(for hospital: Hospital) {
-        let baseURL = URL(string: "https://bookmyvaccine.herokuapp.com/hospitals/appointments")!
+        let baseURL = URL(string: "\(URL.current)/hospitals/appointments")!
         var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: false)!
         urlComponents.queryItems = [
             URLQueryItem(name: "hospitalName", value: hospital.name)
@@ -29,24 +29,14 @@ final class HospitalBookingViewModel: ObservableObject {
             from: url
         )
         .flatMap { (appointments: [BookedAppointment]) -> AnyPublisher<[BookedAppointment], Error> in
-            if appointments.isEmpty {
-                return self.createHospital(with: hospital)
-                    .flatMap { (hospital: Hospital) -> AnyPublisher<[BookedAppointment], Error> in
-                        self.hospital = hospital
-                        return Just(appointments)
-                            .setFailureType(to: Error.self)
-                            .eraseToAnyPublisher()
-                    }
-                    .eraseToAnyPublisher()
-            } else {
-                let booked = appointments[0]
-                DispatchQueue.main.async {
-                    self.hospital?.id = booked.hospitalID
+            self.createHospital(with: hospital)
+                .flatMap { (hospital: Hospital) -> AnyPublisher<[BookedAppointment], Error> in
+                    self.hospital = hospital
+                    return Just(appointments)
+                        .setFailureType(to: Error.self)
+                        .eraseToAnyPublisher()
                 }
-                return Just(appointments)
-                    .setFailureType(to: Error.self)
-                    .eraseToAnyPublisher()
-            }
+                .eraseToAnyPublisher()
         }
         .replaceError(with: [])
         .receive(on: RunLoop.main)
@@ -55,12 +45,12 @@ final class HospitalBookingViewModel: ObservableObject {
     }
 
     func createHospital(with hospital: Hospital) -> AnyPublisher<Hospital, Error> {
-        let url = URL(string: "https://bookmyvaccine.herokuapp.com/hospitals")!
+        let url = URL(string: "\(URL.current)/hospitals")!
         return NetworkManager().create(hospital, on: url)
     }
 
     func bookAppointment() {
-        let url = URL(string: "https://bookmyvaccine.herokuapp.com/appointments")!
+        let url = URL(string: "\(URL.current)/appointments")!
         return NetworkManager().create(selectedAppointment, responseType: BookedAppointment.self, on: url)
             .receive(on: RunLoop.main)
             .sink(receiveCompletion: { completion in
@@ -77,7 +67,7 @@ final class HospitalBookingViewModel: ObservableObject {
         guard let hospitalID = self.hospital?.id else { return [] }
         let booked = bookedAppointments.map(\.time)
         var available = [PendingAppointment]()
-        for hour in 9...12 {
+        for hour in 9...11 {
             for min in stride(from: 0, through: 45, by: 15) {
                 let calendar = Calendar.current
                 var selectedDate = self.selectedDate
@@ -144,6 +134,9 @@ struct HospitalBooking: View {
             }
         }
         .onAppear(perform: handleOnAppear)
+        .onChange(of: viewModel.selectedAppointment) {
+            print($0)
+        }
     }
 
 

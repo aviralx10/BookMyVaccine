@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0A16726325E0611B0031C4FA /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A16726225E0611B0031C4FA /* LocationManager.swift */; };
 		0A3282C925E23EE600F430DD /* Hospital.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3282C825E23EE600F430DD /* Hospital.swift */; };
+		0A3282CF25E285D400F430DD /* URL+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3282CE25E285D400F430DD /* URL+Convenience.swift */; };
 		0A71FC6D25E196AC00AE64B9 /* MyBookings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A71FC6C25E196AC00AE64B9 /* MyBookings.swift */; };
 		0A72BCB625E0745E0009F32F /* NewBooking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A72BCB525E0745E0009F32F /* NewBooking.swift */; };
 		0A72BCB925E07ECB0009F32F /* NewBookingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A72BCB825E07ECB0009F32F /* NewBookingViewModel.swift */; };
@@ -84,6 +85,7 @@
 /* Begin PBXFileReference section */
 		0A16726225E0611B0031C4FA /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		0A3282C825E23EE600F430DD /* Hospital.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hospital.swift; sourceTree = "<group>"; };
+		0A3282CE25E285D400F430DD /* URL+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Convenience.swift"; sourceTree = "<group>"; };
 		0A71FC6C25E196AC00AE64B9 /* MyBookings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBookings.swift; sourceTree = "<group>"; };
 		0A72BCB525E0745E0009F32F /* NewBooking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBooking.swift; sourceTree = "<group>"; };
 		0A72BCB825E07ECB0009F32F /* NewBookingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBookingViewModel.swift; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 			children = (
 				D2FAD12025E1400000740A51 /* Date+Extension.swift */,
 				D2FAD12925E1442B00740A51 /* String+Extensions.swift */,
+				0A3282CE25E285D400F430DD /* URL+Convenience.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -415,6 +418,7 @@
 				D2FAD13825E14C2000740A51 /* VaccineCountsView.swift in Sources */,
 				0A84FF4B25E1C5AE00ADDE04 /* HospitalPin.swift in Sources */,
 				823AC4D625E1917F005FD521 /* User.swift in Sources */,
+				0A3282CF25E285D400F430DD /* URL+Convenience.swift in Sources */,
 				823AC4C425E18D82005FD521 /* Onboarding.swift in Sources */,
 				820ACAC925E05A5100355377 /* SearchBar.swift in Sources */,
 				0A16726325E0611B0031C4FA /* LocationManager.swift in Sources */,
