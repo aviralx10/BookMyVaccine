@@ -16,10 +16,10 @@ The general features of this App are-
 ## SYSTEM DESIGN
 <br> 
 We started our project with building the system design and started to brainstorm ideas in order to make our USE CASE DIAGRAMS AND THE WIREFRAMES. <br>
-### USE CASE DIAGRAM <br>
+## USE CASE DIAGRAM <br>
 <br>
 ![image](Screenshot 2021-02-21 at 2.05.06 PM.png) <br>
-### WIREFRAME <br>
+## WIREFRAME <br>
 <br>
 ![image](Screenshot 2021-02-21 at 2.07.52 PM.png) <br>
 ## API<br>
