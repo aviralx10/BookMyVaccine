@@ -14,9 +14,9 @@ The general features of this App are-
 
 # BUILDING THE APP<br>
 **SYSTEM DESIGN**
-We started our project with building the system design and started to brainstorm ideas in order to make our USE CASE DIAGRAMS AND THE WIREFRAMES. 
-USE CASE DIAGRAM
-//![image](Screenshot%202020-10-14%20at%204.48.44%20PM.png)<br>
+We started our project with building the system design and started to brainstorm ideas in order to make our USE CASE DIAGRAMS AND THE WIREFRAMES. <br>
+USE CASE DIAGRAM<br>
+//![image](Screenshot 2021-02-21 at 2.05.06 PM.png)<br>
 
 
 # TECHNOLOGIES USED<br>
