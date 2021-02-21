@@ -19,7 +19,7 @@ We started our project with building the system design and started to brainstorm
 
 ## USE CASE DIAGRAM <br>
 <br>
-![image](./Screenshot 2021-02-21 at 2.05.06 PM.png) <br>
+![image](Screenshot 2021-02-21 at 2.05.06 PM.png) <br>
 
 ## WIREFRAME <br>
 <br>
