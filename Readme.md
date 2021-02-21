@@ -13,13 +13,13 @@ The general features of this App are-
 4.  **DARK MODE AND LIGHT MODE** - We have implemented this App in both Dark and Light Mode and users can choose either of the two according to thier convinience.
 
 # BUILDING THE APP<br>
-**SYSTEM DESIGN**
+**SYSTEM DESIGN**<br>
 We started our project with building the system design and started to brainstorm ideas in order to make our USE CASE DIAGRAMS AND THE WIREFRAMES. <br>
 USE CASE DIAGRAM<br>
 ![image](Screenshot 2021-02-21 at 2.05.06 PM.png)<br>
 WIREFRAME<br>
 ![image](Screenshot 2021-02-21 at 2.07.52 PM.png)<br>
-API 
+**API**<br>
 We started working on the client and server side by side and successfully implemented our bookings API with the help of NodeJS and ExpressJS.We have hosted our API on swiftuijam.herokuapp.com.
 Our API logic-
    - GET to check available timeslot
