@@ -10,12 +10,18 @@ import Combine
 
 struct NetworkManager {
     var session = URLSession.shared
-    
+
+    static var decoder: JSONDecoder = {
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .iso8601
+        return decoder
+    }()
+
     func fetch<T: Decodable>(_ type: T.Type = T.self, from url: URL) -> AnyPublisher<T, Error> {
         let request = URLRequest(url: url)
         return session.dataTaskPublisher(for: request)
             .map(\.data)
-            .decode(type: T.self, decoder: JSONDecoder())
+            .decode(type: T.self, decoder: Self.decoder)
             .eraseToAnyPublisher()
     }
     
@@ -27,7 +33,7 @@ struct NetworkManager {
                     completion(.failure(error))
                 }
             } else if let data = data {
-                let result = Result { try JSONDecoder().decode(T.self, from: data) }
+                let result = Result { try Self.decoder.decode(T.self, from: data) }
                 DispatchQueue.main.async {
                     completion(result)
                 }

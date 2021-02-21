@@ -9,11 +9,11 @@ import SwiftUI
 
 struct HospitalPin: View {
     let hospitalName: String
-    let isAvailable: Bool
+    let highlighted: Bool
     var body: some View {
         ZStack {
             Circle()
-                .foregroundColor(isAvailable ? Color.green : Color.gray)
+                .foregroundColor(highlighted ? Color.red : Color.green)
             Image(systemName: "cross.fill")
                 .foregroundColor(.white)
         }
@@ -24,8 +24,8 @@ struct HospitalPin: View {
 struct HospitalPin_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            HospitalPin(hospitalName: "Central Hospital", isAvailable: true)
-            HospitalPin(hospitalName: "Central Hospital", isAvailable: false)
+            HospitalPin(hospitalName: "Central Hospital", highlighted: true)
+            HospitalPin(hospitalName: "Central Hospital", highlighted: false)
         }
         .previewLayout(.sizeThatFits)
     }

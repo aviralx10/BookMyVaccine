@@ -10,14 +10,15 @@ import SwiftUI
 struct MainView: View {
     var body: some View {
         TabView {
-            NewBooking()
-                .tabItem {
-                    VStack {
-                        Image(systemName:"pencil")
-                        Text("New Booking")
-                    }
-
-                }.tag(1)
+            NavigationView {
+                NewBooking()
+            }
+            .tabItem {
+                VStack {
+                    Image(systemName:"pencil")
+                    Text("New Booking")
+                }
+            }.tag(1)
             MyBookings()
                 .tabItem {
                     VStack {

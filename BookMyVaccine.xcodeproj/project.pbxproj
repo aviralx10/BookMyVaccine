@@ -13,6 +13,8 @@
 		0A72BCB925E07ECB0009F32F /* NewBookingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A72BCB825E07ECB0009F32F /* NewBookingViewModel.swift */; };
 		0A72BCBD25E0808F0009F32F /* MKMapItem+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A72BCBC25E0808F0009F32F /* MKMapItem+Identifiable.swift */; };
 		0A84FF4B25E1C5AE00ADDE04 /* HospitalPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A84FF4A25E1C5AE00ADDE04 /* HospitalPin.swift */; };
+		0A84FF5A25E1D30500ADDE04 /* Appointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A84FF5925E1D30500ADDE04 /* Appointment.swift */; };
+		0A84FF6225E2206000ADDE04 /* HospitalBooking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A84FF6125E2206000ADDE04 /* HospitalBooking.swift */; };
 		820ACAC625E057F500355377 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820ACAC525E057F500355377 /* MapView.swift */; };
 		820ACAC925E05A5100355377 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820ACAC825E05A5100355377 /* SearchBar.swift */; };
 		823AC4C425E18D82005FD521 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823AC4C325E18D82005FD521 /* Onboarding.swift */; };
@@ -86,6 +88,8 @@
 		0A72BCB825E07ECB0009F32F /* NewBookingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBookingViewModel.swift; sourceTree = "<group>"; };
 		0A72BCBC25E0808F0009F32F /* MKMapItem+Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKMapItem+Identifiable.swift"; sourceTree = "<group>"; };
 		0A84FF4A25E1C5AE00ADDE04 /* HospitalPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalPin.swift; sourceTree = "<group>"; };
+		0A84FF5925E1D30500ADDE04 /* Appointment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appointment.swift; sourceTree = "<group>"; };
+		0A84FF6125E2206000ADDE04 /* HospitalBooking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalBooking.swift; sourceTree = "<group>"; };
 		820ACAC525E057F500355377 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		820ACAC825E05A5100355377 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		823AC4C325E18D82005FD521 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
@@ -159,6 +163,7 @@
 				0A16726225E0611B0031C4FA /* LocationManager.swift */,
 				820ACAC825E05A5100355377 /* SearchBar.swift */,
 				0A72BCB825E07ECB0009F32F /* NewBookingViewModel.swift */,
+				0A84FF6125E2206000ADDE04 /* HospitalBooking.swift */,
 			);
 			path = "New Booking";
 			sourceTree = "<group>";
@@ -184,6 +189,7 @@
 		0A84FF4E25E1C77000ADDE04 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0A84FF5925E1D30500ADDE04 /* Appointment.swift */,
 				823AC4D525E1917F005FD521 /* User.swift */,
 			);
 			path = Model;
@@ -415,6 +421,7 @@
 				D2FAD12A25E1442B00740A51 /* String+Extensions.swift in Sources */,
 				D2FAD11C25E1372300740A51 /* NetworkManager.swift in Sources */,
 				D2FAD0E225E101A200740A51 /* VaccineInfoView.swift in Sources */,
+				0A84FF6225E2206000ADDE04 /* HospitalBooking.swift in Sources */,
 				D2FAD0EB25E11AD300740A51 /* VaccineGraphWidget.swift in Sources */,
 				820ACAC625E057F500355377 /* MapView.swift in Sources */,
 				823AC4CA25E18DC7005FD521 /* Register.swift in Sources */,
@@ -425,6 +432,7 @@
 				D2FAD10925E12F3500740A51 /* VaccineGraphShape.swift in Sources */,
 				823AC4CE25E18E2F005FD521 /* Login.swift in Sources */,
 				D2DBAADF25E047490005042D /* BookMyVaccineApp.swift in Sources */,
+				0A84FF5A25E1D30500ADDE04 /* Appointment.swift in Sources */,
 				0A72BCB925E07ECB0009F32F /* NewBookingViewModel.swift in Sources */,
 				D2FAD0EF25E11B3900740A51 /* VaccineGraphData.swift in Sources */,
 				0A71FC6D25E196AC00AE64B9 /* MyBookings.swift in Sources */,
