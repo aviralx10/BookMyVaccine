@@ -8,20 +8,22 @@
 import WidgetKit
 import SwiftUI
 
-struct VaccineGraphProvider: TimelineProvider {
+struct VaccineGraphProvider: IntentTimelineProvider {
     func placeholder(in context: Context) -> VaccineGraphEntry {
         VaccineGraphEntry(date: Date(), data: nil)
     }
     
-    func getSnapshot(in context: Context, completion: @escaping (VaccineGraphEntry) -> Void) {
-        fetchAllData { (data) in
+    func getSnapshot(for configuration: ContryPickerIntent, in context: Context, completion: @escaping (VaccineGraphEntry) -> Void) {
+        let country = VaccineCountry(rawValue: configuration.country.rawValue) ?? .UnitedStates
+        fetchAllData(country: country) { (data) in
             let entry = VaccineGraphEntry(date: Date(), data: .init(items: data))
             completion(entry)
         }
     }
     
-    func getTimeline(in context: Context, completion: @escaping (Timeline<VaccineGraphEntry>) -> Void) {
-        fetchAllData { (vaccineData) in
+    func getTimeline(for configuration: ContryPickerIntent, in context: Context, completion: @escaping (Timeline<VaccineGraphEntry>) -> Void) {
+        let country = VaccineCountry(rawValue: configuration.country.rawValue) ?? .UnitedStates
+        fetchAllData(country: country) { (vaccineData) in
             var entries: [VaccineGraphEntry] = []
             let currentDate = Date()
             let entryDate = Calendar.current.date(byAdding: .hour, value: 12, to: currentDate)!
@@ -33,8 +35,8 @@ struct VaccineGraphProvider: TimelineProvider {
         }
     }
     
-    private func fetchAllData(completion: @escaping ([VaccineData])->Void) {
-        let url = URL(string: "https://swiftuijam.herokuapp.com/allData/England")!
+    private func fetchAllData(country: VaccineCountry,  completion: @escaping ([VaccineData])->Void) {
+        let url = URL(string: "https://swiftuijam.herokuapp.com/allData/\(country.searchKey)")!
         NetworkManager().fetch([VaccineData].self, from: url) { (result) in
             switch result {
             case .success(let data):
@@ -63,7 +65,7 @@ struct VaccineGraphWidget: Widget {
     let kind: String = "VaccineGraphWidget"
     
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: VaccineGraphProvider()) { entry in
+        IntentConfiguration(kind: kind, intent: ContryPickerIntent.self, provider: VaccineGraphProvider()) { entry in
             VaccineGraphEntryView(entry: entry)
         }
         .configurationDisplayName("Vaccinations Graph")
