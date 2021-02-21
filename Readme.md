@@ -13,10 +13,10 @@ The general features of this App are-
 <a href="https://drive.google.com/uc?export=view&id=1qaAIt7zv_7_VIsBHEQT0ulV4VWXUKe_7"><img src="https://drive.google.com/uc?export=view&id=1qaAIt7zv_7_VIsBHEQT0ulV4VWXUKe_7" width="400" ></a>
 <br> 
 
-3. **QR CODE** - Once the user is finished with booking his/her slot, we provide them with a QR code that is generately automatically with the help of their username.<br>
-<a href="https://drive.google.com/uc?export=view&id=1q7_8kMTg1Z1BAyyykqsgGm0H5B0xv9cA"><img src="https://drive.google.com/uc?export=view&id=1q7_8kMTg1Z1BAyyykqsgGm0H5B0xv9cA" width="400" ></a>
+3. **QR CODE** - Once the user is finished with booking his/her slot, we provide them with a QR code that is generately automatically with the help of their username.
+<br> <a href="https://drive.google.com/uc?export=view&id=1q7_8kMTg1Z1BAyyykqsgGm0H5B0xv9cA"><img src="https://drive.google.com/uc?export=view&id=1q7_8kMTg1Z1BAyyykqsgGm0H5B0xv9cA" width="400" ></a>
 <br>
-4.  **DARK MODE AND LIGHT MODE** - We have implemented this App in both Dark and Light Mode and users can choose either of the two according to thier convinience.
+4. **DARK MODE AND LIGHT MODE** - We have implemented this App in both Dark and Light Mode and users can choose either of the two according to thier convinience.
 
 # BUILDING THE APP<br>
 ## SYSTEM DESIGN
@@ -116,7 +116,7 @@ This uuid is the same as in hospital_slots table.
 * time_slot [String]
 
 # PROBLEMS WE FACED <br>
-1. We had some issues in order to implement the QR code logic, and we didnt want to provide the QR code to the users who have not booked , so that was a bummer for us, but we overcame that problem shortly.
+We had some issues in order to implement the QR code logic, and we didnt want to provide the QR code to the users who have not booked , so that was a bummer for us, but we overcame that problem shortly.
 
 # WHAT'S NEXT <br>
 1. **VOICE OVER** - We could surely implement a VoiceOver feature for the Differently Abled so that they can also easily access the App.
