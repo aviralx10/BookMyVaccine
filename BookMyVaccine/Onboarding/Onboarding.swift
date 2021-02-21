@@ -17,7 +17,6 @@ struct Onboarding: View {
         "Once confirmed, we'll generate a QR code for you for contactless entry to your venue. Yayy!!"
     ]
     @State private var slide = 0
-    @ObservedObject var currentGiver: currentUser
     @Binding var login: Bool
 
     var body: some View {
@@ -25,7 +24,7 @@ struct Onboarding: View {
             VStack {
                 HStack {
                     Spacer()
-                    NavigationLink(destination: Login(currentGiver: currentGiver, login: $login)) {
+                    NavigationLink(destination: Login(login: $login)) {
                         Text("Login")
                             .fontWeight(.bold)
                     }
@@ -43,7 +42,7 @@ struct Onboarding: View {
                     .frame(maxWidth: 200, maxHeight: 60)
                     .padding(.bottom, 20)
                 ImageSlider(slide: $slide).offset(y:-20)
-                NavigationLink(destination: Register(currentGiver: currentGiver, login: $login)) {
+                NavigationLink(destination: Register(login: $login)) {
                     HStack {
                         Text("Sign up")
                             .fontWeight(.heavy)

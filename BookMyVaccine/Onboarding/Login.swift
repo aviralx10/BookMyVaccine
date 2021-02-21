@@ -5,12 +5,13 @@
 //  Created by Aviral Yadav on 21/02/21.
 //
 
+import Combine
 import SwiftUI
 
 struct Login: View{
+    @AppStorage("userID") var userID: String = ""
+    @StateObject private var viewModel = LoginViewModel()
     @State private var username: String = ""
-    @State private var password: String = ""
-    @ObservedObject var currentGiver: currentUser
     @Binding var login: Bool
 
     var body: some View {
@@ -22,17 +23,16 @@ struct Login: View{
                 .padding(.bottom, 20)
 
             VStack(spacing: 25) {
-                TextField("Username", text: $username)
+                TextField("Full Name", text: $username)
                     .frame(width: 260,height:30)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
-                SecureField("Password", text: $password)
-                    .frame(width: 260,height:30)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-
             }
             
             Button(action: {
-                login.toggle()
+                viewModel.createNewUser(with: username) {
+                    userID = $0.id ?? ""
+                    login.toggle()
+                }
             }) {
                 HStack {
                     Text("Login")
@@ -44,8 +44,24 @@ struct Login: View{
                         .cornerRadius(16)
                 }
             }
-            
         }
+    }
+
+}
+
+final class LoginViewModel: ObservableObject {
+    var subscribers = Set<AnyCancellable>()
+    func createNewUser(with name: String, completion: @escaping (User) -> Void) {
+        let user = User(name: name, appointments: [])
+        let url = URL(string: "https://bookmyvaccine.herokuapp.com/patients")!
+        NetworkManager().create(user, on: url)
+            .sink(receiveCompletion: { _ in
+
+            }
+            , receiveValue: { user in
+                completion(user)
+            })
+            .store(in: &subscribers)
     }
 }
 

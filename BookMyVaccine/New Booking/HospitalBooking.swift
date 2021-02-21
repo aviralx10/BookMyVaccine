@@ -10,13 +10,12 @@ import SwiftUI
 
 final class HospitalBookingViewModel: ObservableObject {
     var subscribers = Set<AnyCancellable>()
-
+    @AppStorage("userID") var patientID: String = ""
     @Published var bookedAppointments = [BookedAppointment]()
     @Published var selectedDate = Date()
     @Published var selectedAppointment: PendingAppointment = .initialValue
     @Published var bookedAppointment: BookedAppointment?
     var hospital: Hospital?
-    var patientID: String = UUID().uuidString
 
     func fetchAppointments(for hospital: Hospital) {
         let baseURL = URL(string: "https://bookmyvaccine.herokuapp.com/hospitals/appointments")!

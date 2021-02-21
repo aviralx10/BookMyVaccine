@@ -51,8 +51,8 @@ extension BookedAppointment: Decodable {
 
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.qrCode = try container.decode(String.self, forKey: .id)
-        self.time = try container.decode(Date.self, forKey: .id)
+        self.qrCode = try container.decode(String.self, forKey: CodingKeys.id)
+        self.time = try container.decode(Date.self, forKey: .time)
         let hospital = try container.nestedContainer(keyedBy: HospitalCodingKeys.self, forKey: .hospital)
         self.hospitalID = try hospital.decode(String.self, forKey: .id)
         let patient = try container.nestedContainer(keyedBy: PatientCodingKeys.self, forKey: .patient)

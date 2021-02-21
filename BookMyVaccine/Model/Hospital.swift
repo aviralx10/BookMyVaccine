@@ -1,6 +1,6 @@
 import Foundation
 
-struct Hospital: Codable, Identifiable {
+struct Hospital: Encodable, Identifiable {
     let name: String
     let latitude: Double
     let longitude: Double
@@ -14,7 +14,17 @@ struct Hospital: Codable, Identifiable {
     }
 
     enum CodingKeys: String, CodingKey {
-        case name, latitude, longitude
+        case name, latitude, longitude, id
+    }
+}
+
+extension Hospital: Decodable {
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.name = try container.decode(String.self, forKey: .name)
+        self.latitude = try container.decode(Double.self, forKey: .latitude)
+        self.longitude = try container.decode(Double.self, forKey: .longitude)
+        self.id = try container.decode(String.self, forKey: .id)
     }
 }
 

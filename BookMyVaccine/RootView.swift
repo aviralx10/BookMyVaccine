@@ -7,18 +7,13 @@
 
 import SwiftUI
 
-class currentUser: ObservableObject {
-    @Published var user = User(name: "", email: "", id: 0)
-}
-
 struct RootView: View {
     @State var demoLogin = false
-    @ObservedObject var currentGiver = currentUser()
     var body: some View{
         if demoLogin {
             MainView().ignoresSafeArea(.all, edges: .vertical).statusBar(hidden: true)
         } else {
-            Onboarding(currentGiver: currentGiver, login: $demoLogin).ignoresSafeArea(.all, edges: .vertical).statusBar(hidden: true)
+            Onboarding(login: $demoLogin).ignoresSafeArea(.all, edges: .vertical).statusBar(hidden: true)
         }
     }
 }
