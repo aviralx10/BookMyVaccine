@@ -16,6 +16,7 @@ The general features of this App are-
 3. **QR CODE** - Once the user is finished with booking his/her slot, we provide them with a QR code that is generately automatically with the help of their username.
 <br> <a href="https://drive.google.com/uc?export=view&id=1q7_8kMTg1Z1BAyyykqsgGm0H5B0xv9cA"><img src="https://drive.google.com/uc?export=view&id=1q7_8kMTg1Z1BAyyykqsgGm0H5B0xv9cA" width="400" ></a>
 <br>
+
 4. **DARK MODE AND LIGHT MODE** - We have implemented this App in both Dark and Light Mode and users can choose either of the two according to thier convinience.
 
 # BUILDING THE APP<br>
