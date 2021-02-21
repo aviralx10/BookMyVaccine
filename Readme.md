@@ -2,6 +2,8 @@
 An iOS App that serves as a medium for people to book COVID vaccines from the comfort of their homes.
 
 # APP DEMO <br>
+<iframe title="vimeo-player" src="https://player.vimeo.com/video/515028720" width="640" height="1308" frameborder="0" allowfullscreen></iframe>
+<br>
 
 
 # WHAT IT DOES<br>
