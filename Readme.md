@@ -25,7 +25,7 @@ We started our project with building the system design and started to brainstorm
 
 ## USE CASE DIAGRAM <br>
 <br>
-<a href="https://drive.google.com/uc?export=view&id=1YjSUu7016VxYXohm00TETqbdfRPdlBNk"><img src="https://drive.google.com/uc?export=view&id=1YjSUu7016VxYXohm00TETqbdfRPdlBNkA" ></a>
+<a href="https://drive.google.com/uc?export=view&id=1YjSUu7016VxYXohm00TETqbdfRPdlBNk"><img src="https://drive.google.com/uc?export=view&id=1YjSUu7016VxYXohm00TETqbdfRPdlBNk" ></a>
 <br>
 
 ## WIREFRAME <br>
