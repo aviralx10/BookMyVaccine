@@ -33,7 +33,6 @@
 		D2FAD0DD25E0FE8C00740A51 /* VaccineData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FAD0D725E0FDA500740A51 /* VaccineData.swift */; };
 		D2FAD0E225E101A200740A51 /* VaccineInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FAD0E125E101A200740A51 /* VaccineInfoView.swift */; };
 		D2FAD0E725E101D400740A51 /* VaccineInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FAD0E125E101A200740A51 /* VaccineInfoView.swift */; };
-		D2FAD0EB25E11AD300740A51 /* VaccineGraphWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FAD0EA25E11AD300740A51 /* VaccineGraphWidget.swift */; };
 		D2FAD0EF25E11B3900740A51 /* VaccineGraphData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FAD0EE25E11B3900740A51 /* VaccineGraphData.swift */; };
 		D2FAD0F225E11B6400740A51 /* VaccineGraphData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FAD0EE25E11B3900740A51 /* VaccineGraphData.swift */; };
 		D2FAD0F525E11ED300740A51 /* VaccineGraphWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FAD0EA25E11AD300740A51 /* VaccineGraphWidget.swift */; };
@@ -403,7 +402,6 @@
 				D2FAD12A25E1442B00740A51 /* String+Extensions.swift in Sources */,
 				D2FAD11C25E1372300740A51 /* NetworkManager.swift in Sources */,
 				D2FAD0E225E101A200740A51 /* VaccineInfoView.swift in Sources */,
-				D2FAD0EB25E11AD300740A51 /* VaccineGraphWidget.swift in Sources */,
 				820ACAD125E135D900355377 /* MyBookings.swift in Sources */,
 				820ACAC625E057F500355377 /* MapView.swift in Sources */,
 				823AC4CA25E18DC7005FD521 /* Register.swift in Sources */,

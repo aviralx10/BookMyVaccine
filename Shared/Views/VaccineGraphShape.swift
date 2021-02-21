@@ -34,7 +34,6 @@ struct VaccineGraphShape: Shape {
     }
     
     private func position(of point: Double, at index: Int, in rect: CGRect) -> CGPoint {
-        print(points)
         let space = rect.width / CGFloat(normalisedPoints.count)
         let x = space * CGFloat(index)
         let y = rect.height - (rect.height * CGFloat(point))

@@ -39,8 +39,7 @@ struct VaccineGraphProvider: TimelineProvider {
             switch result {
             case .success(let data):
                 completion(data)
-            case .failure(let error):
-                print(error)
+            case .failure:
                 completion([])
             }
         }
@@ -77,7 +76,7 @@ struct VaccineGraphWidget_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             VaccineGraphEntryView(entry: VaccineGraphEntry(date: Date(), data: .sample))
-                .previewContext(WidgetPreviewContext(family: .systemLarge))
+                .previewContext(WidgetPreviewContext(family: .systemMedium))
             
             VaccineGraphEntryView(entry: VaccineGraphEntry(date: Date(), data: nil))
                 .preferredColorScheme(.dark)

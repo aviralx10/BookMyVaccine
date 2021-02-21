@@ -41,10 +41,8 @@ struct VaccinationCountProvider: TimelineProvider {
         NetworkManager().fetch(VaccineData.self, from: url) { (result) in
             switch result {
             case .success(let data):
-                print(data)
                 completion(data)
-            case .failure(let error):
-                print(error)
+            case .failure:
                 completion(nil)
             }
         }
