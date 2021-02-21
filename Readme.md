@@ -123,12 +123,15 @@ This uuid is the same as in hospital_slots table.
 2. **SCALABILITY** - Right now, our app only has a handful of data of few hospitals and time slots, we could surely add more Hospitals of different cities and their time slots too.<br>
 3. **IMPLEMENTING LOGIN FUNCTIONALITY BY USING APPLE,FACEBOOK,TWITTER ACCOUNTS OF USERS** 
 <br>
+
 # TECHNOLOGIES USED<br>
 SWIFTUI,
 WIDGETKIT,
 NODEJS,
 MAPKIT,
-COMBINE
+COMBINE,
+MONGODB,
+ORM
 
 
 
