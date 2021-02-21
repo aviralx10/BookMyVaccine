@@ -28,7 +28,7 @@ We started our project with building the system design and started to brainstorm
 ## WIREFRAME <br>
 <br>
 
-![image](./Screenshot 2021-02-21 at 2.07.52 PM.png) <br>
+![image](Screenshot 2021-02-21 at 2.07.52 PM.png) <br>
 ## API<br>
 <br>
 
@@ -111,9 +111,20 @@ This uuid is the same as in hospital_slots table.
 * hospital_name [String]
 * time_slot [String]
 
+# PROBLEMS WE FACED <br>
+1. We had some issues in order to implement the QR code logic, and we didnt want to provide the QR code to the users who have not booked , so that was a bummer for us, but we overcame that problem shortly.
 
+# WHAT'S NEXT <br>
+**VOICE OVER** - We could surely implement a VoiceOver feature for the Differently Abled so that they can also easily access the App.
+**SCALABILITY** - Right now, our app only has a handful of data of few hospitals and time slots, we could surely add more Hospitals of different cities and their time slots too.
+**IMPLEMENTING LOGIN FUNCTIONALITY BY USING APPLE,FACEBOOK,TWITTER ACCOUNTS OF USERS** 
+<br>
 # TECHNOLOGIES USED<br>
-SWIFTUI,WIDGETKIT,NODE,MAPKIT
+SWIFTUI
+WIDGETKIT
+NODEJS
+MAPKIT
+COMBINE
 
 
 
