@@ -27,6 +27,7 @@ struct NetworkManager {
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.httpBody = try? Self.encoder.encode(value)
+        request.allHTTPHeaderFields = ["content-type": "application/json"]
         if let data = request.httpBody {
             if let jsonObject = try? JSONSerialization.jsonObject(
                 with: data, options: []
@@ -54,6 +55,41 @@ struct NetworkManager {
                 }
             })
             .decode(type: T.self, decoder: Self.decoder)
+            .eraseToAnyPublisher()
+    }
+
+    func create<T: Encodable, R: Decodable>(_ value: T, responseType: R.Type, on url: URL) -> AnyPublisher<R, Error> {
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.httpBody = try? Self.encoder.encode(value)
+        request.allHTTPHeaderFields = ["content-type": "application/json"]
+        if let data = request.httpBody {
+            if let jsonObject = try? JSONSerialization.jsonObject(
+                with: data, options: []
+            ) {
+                if let data = try? JSONSerialization.data(
+                    withJSONObject: jsonObject,
+                    options: [.prettyPrinted]
+                ) {
+                    print(String(data: data, encoding: .utf8)!)
+                }
+            }
+        }
+        return session.dataTaskPublisher(for: request)
+            .map(\.data)
+            .handleEvents(receiveOutput: { data in
+                if let jsonObject = try? JSONSerialization.jsonObject(
+                    with: data, options: []
+                ) {
+                    if let data = try? JSONSerialization.data(
+                        withJSONObject: jsonObject,
+                        options: [.prettyPrinted]
+                    ) {
+                        print(String(data: data, encoding: .utf8)!)
+                    }
+                }
+            })
+            .decode(type: R.self, decoder: Self.decoder)
             .eraseToAnyPublisher()
     }
 

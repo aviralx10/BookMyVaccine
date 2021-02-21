@@ -13,7 +13,8 @@ final class HospitalBookingViewModel: ObservableObject {
 
     @Published var bookedAppointments = [BookedAppointment]()
     @Published var selectedDate = Date()
-    @Published var selectedAppointment: PendingAppointment?
+    @Published var selectedAppointment: PendingAppointment = .initialValue
+    @Published var bookedAppointment: BookedAppointment?
     var hospital: Hospital?
     var patientID: String = UUID().uuidString
 
@@ -59,9 +60,18 @@ final class HospitalBookingViewModel: ObservableObject {
         return NetworkManager().create(hospital, on: url)
     }
 
-    func bookAppointment(pendingAppointment: PendingAppointment) {
-        let baseURL = URL(string: "https://bookmyvaccine.herokuapp.com/appointments")!
-        return NetworkManager().create(pendingAppointment, on: url)
+    func bookAppointment() {
+        let url = URL(string: "https://bookmyvaccine.herokuapp.com/appointments")!
+        return NetworkManager().create(selectedAppointment, responseType: BookedAppointment.self, on: url)
+            .receive(on: RunLoop.main)
+            .sink(receiveCompletion: { completion in
+                if case .failure(let error) = completion {
+                    print(error.localizedDescription)
+                }
+            }, receiveValue: {
+                self.bookedAppointment = $0
+            })
+            .store(in: &subscribers)
     }
 
     var availableAppointments: [PendingAppointment] {
@@ -82,7 +92,18 @@ final class HospitalBookingViewModel: ObservableObject {
             }
         }
         return available
+    }
 
+    func formattedTime(for appointment: Appointment) -> String {
+        Date.timeFormatter.string(from: appointment.time)
+    }
+
+    func formattedDate(for appointment: Appointment) -> String {
+        Date.dateOnlyFormatter.string(from: appointment.time)
+    }
+
+    var timeText: String {
+        formattedTime(for: selectedAppointment)
     }
 }
 
@@ -105,32 +126,58 @@ struct HospitalBooking: View {
                 )
             }
             Section(header: Text("Time")) {
-                Picker("Time", selection: $viewModel.selectedAppointment) {
-                    ForEach(viewModel.availableAppointments, id: \.time) {
-                        Text(formattedDate(for: $0))
+                Picker(
+                    "Time", selection: $viewModel.selectedAppointment
+                ) {
+                    ForEach(viewModel.availableAppointments, id: \.time) { appointment in
+                        Text(viewModel.formattedTime(for: appointment))
+                            .tag(appointment)
                     }
                 }
             }
         }
         .toolbar {
             ToolbarItem(placement: .confirmationAction) {
-                Button("Book") {
-
-                }
+                NavigationLink("Book", destination:
+                    ConfirmationPage(viewModel: viewModel)
+                )
+                .disabled(viewModel.selectedAppointment == .initialValue)
             }
         }
         .onAppear(perform: handleOnAppear)
     }
 
-    func formattedDate(for appointment: PendingAppointment) -> String {
-        Date.timeFormatter.string(from: appointment.time)
-    }
 
     func handleOnAppear() {
         if !isFetching {
             viewModel.fetchAppointments(for: hospital)
         }
         isFetching = true
+    }
+}
+
+struct ConfirmationPage: View {
+    @ObservedObject var viewModel: HospitalBookingViewModel
+
+    var body: some View {
+        if let bookedAppointment = viewModel.bookedAppointment {
+            VStack {
+                Text("Confirmed")
+                Section(header: Text("Hospital Name")) {
+                    Text(viewModel.hospital!.name)
+                }
+                Section(header: Text("Date")) {
+                    Text(viewModel.formattedDate(for: bookedAppointment))
+                }
+                Section(header: Text("Time")) {
+                    Text(viewModel.formattedTime(for: bookedAppointment))
+                }
+                //TODO: QR Code for bookedAppointment.id
+            }
+        } else {
+            ProgressView()
+                .onAppear(perform: viewModel.bookAppointment)
+        }
     }
 }
 

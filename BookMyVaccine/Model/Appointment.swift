@@ -17,6 +17,14 @@ struct PendingAppointment: Appointment, Hashable {
     func hash(into hasher: inout Hasher) {
         hasher.combine("\(hospitalID)\(time)\(patientID)")
     }
+
+    static var initialValue: PendingAppointment {
+        .init(
+            hospitalID: "",
+            time: Date(timeIntervalSince1970: 1613916000),
+            patientID: ""
+        )
+    }
 }
 
 extension PendingAppointment: Encodable {
