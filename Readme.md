@@ -5,7 +5,7 @@ An iOS app that serves as a medium for people to book COVID-19 vaccines from the
 [Link to Video](https://player.vimeo.com/video/515028720)
 
 ## What It Does
-We wanted to be apprehensive of the fact that the general masses are now getting vaccinated and we wanted to help more to this process. So we created BookMyVaccine. 
+We wanted to highlight the fact that the general masses are now getting vaccinated and we wanted to help more to this process. So we created BookMyVaccine. 
 
 #### Booking Vaccines
 
