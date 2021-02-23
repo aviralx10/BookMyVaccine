@@ -28,7 +28,7 @@ Once the user is finished with booking his/her slot, we provide them with a QR c
 
 #### Dark Mode And Light Mode
 
-We have implemented this app in both Dark and Light Mode and users can choose either of the two according to thier convenience.
+We have implemented this app in both Dark and Light Mode and users can choose either of the two according to their convenience.
 
 ## Building the App
 ### Use Case Diagram
